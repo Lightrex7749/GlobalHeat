@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling: Key to Sustainability</title>
+    <link rel="icon" type="image/x-icon" href="assect/images/planet-earth.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .efficiency-stats {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e8f5e9;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .stat-highlight {
+            color: #2e7d32;
+            font-weight: bold;
+            padding: 0 5px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-explanation {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .video-explanation ul {
+            margin-top: 10px;
+            list-style-type: none;
+        }
+
+        .video-explanation li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .video-explanation li:before {
+            content: "•";
+            color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <div class="navbar">
+            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth" class="responsive-img" data-aos="fade-right"></a>
+            <div class="navbar-right">
+                <h1 data-aos="fade-down">Recycling: Building a Sustainable Future</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" data-aos="fade-right"><i class="fas fa-home"></i> Main Page</a></li>
+                        <li><a href="#materials" data-aos="fade-right"><i class="fas fa-recycle"></i> Materials</a></li>
+                        <li><a href="#process" data-aos="fade-right"><i class="fas fa-cogs"></i> Process</a></li>
+                        <li><a href="#impact" data-aos="fade-right"><i class="fas fa-chart-bar"></i> Impact</a></li>
+                        <li><a href="#guidelines" data-aos="fade-right"><i class="fas fa-book"></i> Guidelines</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="materials" class="page-section" data-aos="fade-up">
+        <h2>Recyclable Materials</h2>
+        <div class="data-grid">
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Plastic Recycling</h3>
+                <div class="chart-container">
+                    <canvas id="plasticRecyclingChart"></canvas>
+                </div>
+                <div class="video-explanation">
+                    <p>Plastic recycling breakdown:</p>
+                    <ul>
+                        <li>PET Bottles: 55% recycled</li>
+                        <li>HDPE Containers: 30% processed</li>
+                        <li>Other Plastics: 15% recovered</li>
+                        <li>Mixed Plastics: 25% reused</li>
+                    </ul>
+                    <p class="efficiency-stats">
+                        <span class="stat-highlight">31% Total Rate</span> |
+                        <span class="stat-highlight">20K Tons Monthly</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="stat-card" data-aos="flip-right">
+                <h3>Material Distribution</h3>
+                <div class="chart-container">
+                    <canvas id="materialDistributionChart"></canvas>
+                </div>
+                <div class="video-explanation">
+                    <p>Current recycling rates:</p>
+                    <ul>
+                        <li>Paper: 65% recovery rate</li>
+                        <li>Metal: 70% reprocessed</li>
+                        <li>Glass: 35% recycled</li>
+                        <li>Plastics: 40% reclaimed</li>
+                    </ul>
+                    <p class="efficiency-stats">
+                        <span class="stat-highlight">52% Average Rate</span>
+                        <span class="stat-highlight">15% Annual Growth</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Paper & Cardboard</h3>
+                <div class="chart-container">
+                    <canvas id="paperRecyclingChart"></canvas>
+                </div>
+                <div class="video-explanation">
+                    <p>Recycling benefits per ton:</p>
+                    <ul>
+                        <li>Trees: 17 trees preserved</li>
+                        <li>Water: 7,000 gallons saved</li>
+                        <li>Energy: 64% reduction</li>
+                        <li>Landfill: 3 cubic yards saved</li>
+                    </ul>
+                    <p class="efficiency-stats">
+                        <span class="stat-highlight">85% Recovery Rate</span>
+                        <span class="stat-highlight">Monthly: 1000 Tons</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="page-section" data-aos="fade-up">
+        <h2>Recycling Process</h2>
+        <div class="data-grid">
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Collection Methods</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/b7GMpjx2jDQ" title="Modern Recycling Collection"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-explanation">
+                    <p>Modern collection methods we use:</p>
+                    <ul>
+                        <li>Curbside Pickup: Weekly scheduled collections</li>
+                        <li>Drop-off Centers: 24/7 community points</li>
+                        <li>Smart Bins: IoT-enabled collection</li>
+                        <li>Mobile Apps: Schedule tracking</li>
+                    </ul>
+                    <p class="efficiency-stats">
+                        <span class="stat-highlight">95% Coverage</span> |
+                        <span class="stat-highlight">24/7 Access</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="stat-card" data-aos="flip-right">
+                <h3>Process Flow</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/cNPEH0GOhRw?si=8Q4FSya1008V9xS6" title="Recycling Process Flow"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-explanation">
+                    <p>Key steps in our recycling process:</p>
+                    <ul>
+                        <li>Collection: Smart routing and automated pickup</li>
+                        <li>Sorting: AI-powered material separation</li>
+                        <li>Processing: Material cleaning and preparation</li>
+                        <li>Quality Check: Contamination detection</li>
+                    </ul>
+                    <p class="efficiency-stats">
+                        <span class="stat-highlight">85% Recovery Rate</span> |
+                        <span class="stat-highlight">50 Tons/Hour</span>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="stat-card" data-aos="flip-right">
+                <h3>Processing Efficiency</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/s4LZwCDaoQM"
+                        title="Inside a Recycling Plant - How Materials Are Sorted and Processed" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-explanation">
+                    <p>Explore state-of-the-art recycling facilities:</p>
+                    <ul>
+                        <li>Advanced optical sorting technology</li>
+                        <li>Automated material separation systems</li>
+                        <li>High-speed conveyor processing</li>
+                        <li>Quality control checkpoints</li>
+                        <li>Baling and packaging operations</li>
+                    </ul>
+                    <p class="efficiency-stats">
+                        Current facility performance:
+                        <span class="stat-highlight">95% sorting accuracy</span> |
+                        <span class="stat-highlight">50 tons/hour processing</span> |
+                        <span class="stat-highlight">85% recovery rate</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="impact" class="page-section" data-aos="fade-up">
+        <h2>Environmental Impact</h2>
+        <div class="data-grid">
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Carbon Reduction</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/8q7_aV8eLUE" title="Carbon Reduction Impact"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-explanation">
+                    <p>Key carbon reduction achievements:</p>
+                    <ul>
+                        <li>Manufacturing: 95% less CO2 emissions</li>
+                        <li>Transport: 40% reduced carbon footprint</li>
+                        <li>Processing: 70% energy efficiency</li>
+                        <li>Waste Prevention: 85% landfill reduction</li>
+                    </ul>
+                    <p class="efficiency-stats">
+                        <span class="stat-highlight">75% Net Reduction</span> |
+                        <span class="stat-highlight">500K Tons CO2 Saved</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Impact Metrics</h3>
+                <div class="chart-container">
+                    <canvas id="impactMetricsChart"></canvas>
+                </div>
+                <div class="video-explanation">
+                    <p>Key environmental achievements:</p>
+                    <ul>
+                        <li>CO2 Reduction: 80% decrease in emissions</li>
+                        <li>Water Saved: 75% conservation rate</li>
+                        <li>Energy Efficiency: 85% power savings</li>
+                        <li>Resource Recovery: 90% material reuse</li>
+                    </ul>
+                    <p class="efficiency-stats">
+                        <span class="stat-highlight">80% Overall Impact</span> |
+                        <span class="stat-highlight">Annual Growth: 15%</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="stat-card" data-aos="flip-right">
+                <h3>Resource Conservation</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VlRVPum9cp4" title="Resource Conservation Impact"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-explanation">
+                    <p>Key conservation metrics:</p>
+                    <ul>
+                        <li>Water: 95 billion gallons saved</li>
+                        <li>Energy: 185 million BTUs preserved</li>
+                        <li>Raw Materials: 60% reduction in usage</li>
+                        <li>Landfill Space: 30% decrease</li>
+                    </ul>
+                    <p class="efficiency-stats">
+                        <span class="stat-highlight">70% Resource Saved</span> |
+                        <span class="stat-highlight">40% Cost Reduction</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="feedback-redirect" class="page-section" data-aos="fade-up">
+        <div class="feedback-redirect-container">
+            <div class="feedback-content">
+                <h2><i class="fas fa-heart"></i> We Value Your Input</h2>
+                <p>Help us create a better future by sharing your thoughts on Recycling</p>
+                <a href="feedback.html" class="glow-button">
+                    <i class="fas fa-comments"></i>
+                    Share Your Feedback
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Recycling</h3>
+                <p>Leading the way to a sustainable future through effective recycling practices and environmental
+                    stewardship.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Main Page</a></li>
+                    <li><a href="#materials">Materials</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#guidelines">Guidelines</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: recycling@globalwarming.org</li>
+                    <li>Phone: +919244372179</li>
+                    <li>Address: secter-infinity, The last Heven, Hell City</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 Global Recycling Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Plastic Recycling Chart
+        const plasticCtx = document.getElementById('plasticRecyclingChart').getContext('2d');
+        new Chart(plasticCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['PET', 'HDPE', 'Other Plastics'],
+                datasets: [{
+                    data: [55, 30, 15],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Material Distribution Chart
+        new Chart(document.getElementById('materialDistributionChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['Paper', 'Plastic', 'Metal', 'Organic'],
+                datasets: [{
+                    label: 'Recycling Rate (%)',
+                    data: [65, 40, 70, 45],
+                    backgroundColor: [
+                        '#2196F3',
+                        '#64B5F6',
+                        '#4CAF50',
+                        '#8BC34A'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Global Material Recycling Rates 2023'
+                    }
+                }
+            }
+        });
+
+
+        // Process Flow Chart
+        new Chart(document.getElementById('processFlowChart').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['Collection', 'Sorting', 'Processing', 'Quality Check', 'Manufacturing', 'Distribution', 'Retail'],
+                datasets: [{
+                    label: 'Efficiency Rate',
+                    data: [90, 85, 75, 82, 80, 95, 88],
+                    borderColor: '#FF9800',
+                    fill: true,
+                    backgroundColor: 'rgba(255, 152, 0, 0.1)'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Process Efficiency Timeline'
+                    }
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Impact Metrics Chart
+            const impactCtx = document.getElementById('impactMetricsChart');
+            new Chart(impactCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['CO2 Reduction', 'Water Saved', 'Energy Efficiency', 'Resource Recovery'],
+                    datasets: [{
+                        label: 'Environmental Impact %',
+                        data: [80, 75, 85, 90],
+                        backgroundColor: 'rgba(76, 175, 80, 0.2)',
+                        borderColor: '#4CAF50',
+                        pointBackgroundColor: '#4CAF50'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        
+            // Paper & Cardboard Chart
+            const paperCtx = document.getElementById('paperRecyclingChart');
+            new Chart(paperCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Trees Saved', 'Water Saved', 'Energy Saved', 'Landfill Reduced'],
+                    datasets: [{
+                        label: 'Resource Savings',
+                        data: [17, 70, 64, 30],
+                        backgroundColor: [
+                            '#8BC34A',
+                            '#03A9F4',
+                            '#FFC107',
+                            '#795548'
+                        ],
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    }
+                }
+            });
+        });
+        
+
+
+
+    </script>
+    <script>
+        // Wait for all content to load
+        window.onload = function() {
+            // Impact Metrics Chart
+            const impactCtx = document.getElementById('impactMetricsChart').getContext('2d');
+            new Chart(impactCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['CO2 Reduction', 'Water Saved', 'Energy Efficiency', 'Resource Recovery'],
+                    datasets: [{
+                        label: 'Environmental Impact %',
+                        data: [80, 75, 85, 90],
+                        backgroundColor: 'rgba(76, 175, 80, 0.2)',
+                        borderColor: '#4CAF50',
+                        pointBackgroundColor: '#4CAF50'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+    
+            // Paper & Cardboard Chart
+            const paperCtx = document.getElementById('paperRecyclingChart').getContext('2d');
+            new Chart(paperCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Trees Saved', 'Water Saved', 'Energy Saved', 'Landfill Reduced'],
+                    datasets: [{
+                        label: 'Resource Savings',
+                        data: [17, 70, 64, 30],
+                        backgroundColor: [
+                            '#8BC34A',
+                            '#03A9F4',
+                            '#FFC107',
+                            '#795548'
+                        ],
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

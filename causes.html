@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causes of Global Warming</title>
+    <link rel="icon" type="image/x-icon" href="/assect/images/planet-earth.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth" class="responsive-img" data-aos="fade-right"></a>
+            <div class="navbar-right">
+                <h1 data-aos="fade-down">Major Causes of Global Warming</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" data-aos="fade-right"><i class="fas fa-home"></i> Main Page</a></li>
+                        <li><a href="#industrial" data-aos="fade-right"><i class="fas fa-industry"></i> Industrial</a>
+                        </li>
+                        <li><a href="#transportation" data-aos="fade-right"><i class="fas fa-car"></i>
+                                Transportation</a></li>
+                        <li><a href="#deforestation" data-aos="fade-right"><i class="fas fa-tree"></i> Deforestation</a>
+                        </li>
+                        <li><a href="#agriculture" data-aos="fade-right"><i class="fas fa-tractor"></i> Agriculture</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="industrial" class="page-section" data-aos="fade-up">
+        <h2>Industrial Emissions</h2>
+        <div class="data-grid">
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Manufacturing Impact</h3>
+                <div class="chart-container">
+                    <canvas id="manufacturingImpactChart"></canvas>
+
+                </div>
+                <p>Industrial manufacturing emissions by sector:</p>
+                <ul>
+                    <li>Steel Production: 7-9% global emissions</li>
+                    <li>Cement Manufacturing: 6-8% global emissions</li>
+                    <li>Chemical Processing: 5-7% global emissions</li>
+                </ul>
+            </div>
+            <div class="stat-card" data-aos="fade-up">
+                <h3>Understanding Industrial Impact</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ipVxxxqwBQw" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>This comprehensive overview explains how industrial processes contribute to global warming through:
+                </p>
+                <ul>
+                    <li>Manufacturing emissions and their atmospheric impact</li>
+                    <li>Chemical processing and greenhouse gas generation</li>
+                    <li>Industrial waste management challenges</li>
+                </ul>
+            </div>
+
+            <div class="stat-card" data-aos="flip-right">
+                <h3>Energy Consumption</h3>
+                <div class="chart-container">
+                    <canvas id="energyConsumptionChart"></canvas>
+                </div>
+                <p>Industrial energy usage trends:</p>
+                <ul>
+                    <li>Fossil Fuel Dependency: 63%</li>
+                    <li>Renewable Energy Adoption: 27%</li>
+                    <li>Nuclear Power Usage: 10%</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="transportation" class="page-section" data-aos="fade-up">
+        <h2>Transportation Emissions</h2>
+        <div class="data-grid">
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Vehicle Emissions</h3>
+                <div class="chart-container">
+                    <canvas id="vehicleEmissionsChart"></canvas>
+                </div>
+                <p>Transportation sector breakdown:</p>
+                <ul>
+                    <li>Road Vehicles: 72% of transport emissions</li>
+                    <li>Aviation: 11% of transport emissions</li>
+                    <li>Shipping: 14% of transport emissions</li>
+                </ul>
+            </div>
+            <div class="stat-card" data-aos="fade-up">
+                <h3>Transportation's Role in Climate Change</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/FlPSs7ytvT0?si=Kie03-fZHCrtbPB4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Explore how different modes of transportation impact our climate:</p>
+                <ul>
+                    <li>Vehicle emissions and urban air quality</li>
+                    <li>Aviation industry's carbon footprint</li>
+                    <li>Maritime transport environmental impact</li>
+                </ul>
+            </div>
+            <div class="stat-card" data-aos="flip-up">
+                <h3>Urban Transit Impact</h3>
+                <div class="chart-container">
+                    <canvas id="urbanTransitChart"></canvas>
+
+                </div>
+                <p>City transportation emissions:</p>
+                <ul>
+                    <li>Public Transit: 15% of urban emissions</li>
+                    <li>Private Vehicles: 60% of city transport</li>
+                    <li>Ride-sharing Services: 25% contribution</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="deforestation" class="page-section" data-aos="fade-up">
+        <h2>Deforestation Impact</h2>
+        <div class="data-grid">
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Forest Loss Statistics</h3>
+                <div class="chart-container">
+                    <canvas id="forestLossChart"></canvas>
+                </div>
+                <p>Global deforestation trends:</p>
+                <ul>
+                    <li>Tropical Forest Loss: 12.2 million hectares in 2020</li>
+                    <li>Amazon Rainforest: 17% lost in past 50 years</li>
+                    <li>Carbon Storage Impact: 15% of global emissions</li>
+                </ul>
+            </div>
+            <div class="stat-card" data-aos="fade-up">
+                <h3>Deforestation Crisis</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Ic-J6hcSKa8" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Understanding the global deforestation crisis:</p>
+                <ul>
+                    <li>Rate of forest loss worldwide</li>
+                    <li>Impact on biodiversity and ecosystems</li>
+                    <li>Indigenous communities affected</li>
+                </ul>
+            </div>
+
+            <div class="stat-card" data-aos="flip-right">
+                <h3>Biodiversity Impact</h3>
+                <div class="chart-container">
+                    <canvas id="biodiversityImpactChart"></canvas>
+
+                </div>
+                <p>Species affected by deforestation:</p>
+                <ul>
+                    <li>80% of terrestrial species live in forests</li>
+                    <li>137 species lost daily due to deforestation</li>
+                    <li>28,000 species may go extinct in coming decades</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="agriculture" class="page-section" data-aos="fade-up">
+        <h2>Agricultural Emissions</h2>
+        <div class="data-grid">
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Livestock Impact</h3>
+                <div class="chart-container">
+                    <canvas id="livestockImpactChart"></canvas>
+                </div>
+                <p>Livestock contribution to emissions:</p>
+                <ul>
+                    <li>Methane from cattle: 40% of agricultural emissions</li>
+                    <li>Feed production: 45% of sector emissions</li>
+                    <li>Manure management: 15% of livestock impact</li>
+                </ul>
+            </div>
+            <div class="stat-card" data-aos="fade-up">
+                <h3>Agricultural Emissions Explained</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/iG7sskGIWl4?si=1pmYgyYWCUTRJkP2" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Understanding agriculture's role in climate change:</p>
+                <ul>
+                    <li>Livestock methane emissions</li>
+                    <li>Soil management practices</li>
+                    <li>Fertilizer use impact</li>
+                </ul>
+            </div>
+
+
+            <div class="stat-card" data-aos="flip-right">
+                <h3>Crop Production</h3>
+                <div class="chart-container">
+                    <canvas id="cropEmissionsChart"></canvas>
+                </div>
+                <p>Crop farming emissions:</p>
+                <ul>
+                    <li>Rice cultivation: 29% of crop emissions</li>
+                    <li>Synthetic fertilizers: 13% of agricultural emissions</li>
+                    <li>Soil management: 28% of farming impact</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="feedback-redirect" class="page-section" data-aos="fade-up">
+        <div class="feedback-redirect-container">
+            <div class="feedback-content">
+                <h2><i class="fas fa-heart"></i> We Value Your Input</h2>
+                <p>Help us create a better future by sharing your thoughts on Causes of Global Warming</p>
+                <a href="feedback.html" class="glow-button">
+                    <i class="fas fa-comments"></i>
+                    Share Your Feedback
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Causes</h3>
+                <p>Understanding the root causes of global warming is crucial for developing effective solutions and
+                    mitigation strategies.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Main Page</a></li>
+                    <li><a href="#industrial">Industrial Emissions</a></li>
+                    <li><a href="#transportation">Transportation</a></li>
+                    <li><a href="#deforestation">Deforestation</a></li>
+                    <li><a href="#agriculture">Agriculture</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: causes@globalwarming.org</li>
+                    <li>Phone: +919244372179</li>
+                    <li>Address: secter-infinity, The last Heven, Hell City</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 Global Warming Causes. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

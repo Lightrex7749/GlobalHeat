@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategies Against Global Warming</title>
+    <link rel="icon" type="image/x-icon" href="/assect/images/planet-earth.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth" class="responsive-img" data-aos="fade-right"></a>
+            <div class="navbar-right">
+                <h1 data-aos="fade-down">Strategic Solutions for Global Warming</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" data-aos="fade-right"><i class="fas fa-home"></i> Main Page</a></li>
+                        <li><a href="#renewable" data-aos="fade-right"><i class="fas fa-solar-panel"></i> Renewable
+                                Energy</a></li>
+                        <li><a href="#efficiency" data-aos="fade-right"><i class="fas fa-bolt"></i> Energy
+                                Efficiency</a></li>
+                        <li><a href="#transport" data-aos="fade-right"><i class="fas fa-bus"></i> Sustainable
+                                Transport</a></li>
+                        <li><a href="#innovation" data-aos="fade-right"><i class="fas fa-microscope"></i> Innovation</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="renewable" class="page-section" data-aos="fade-up">
+        <h2>Renewable Energy Solutions</h2>
+        <div class="data-grid">
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Solar Power Growth</h3>
+                <div class="chart-container">
+                    <canvas id="solarGrowthChart"></canvas>
+                </div>
+                <p>
+                    Solar power adoption has shown remarkable growth over the past five years, with global capacity
+                    expanding from 480 GW to 1200 GW. This exponential increase reflects both technological advancement
+                    and falling costs, making solar energy increasingly accessible worldwide. The 85% cost reduction
+                    since 2010 has been a key driver in this transformation, enabling broader implementation across
+                    residential and commercial sectors.
+                </p>
+            </div>
+
+            <div class="stat-card" data-aos="flip-right">
+                <h3>Wind Energy Impact</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/cVlfhpbvZCg?si=u4qeXT_25TRq-8sI" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>
+                    Wind energy has emerged as a cornerstone of renewable power, with offshore capacity reaching 35.3 GW
+                    and onshore installations growing by 93.6 GW annually. This sector has created 1.2 million jobs
+                    globally, demonstrating its significant economic impact. The continuous improvement in turbine
+                    technology and efficiency has made wind power increasingly competitive with traditional energy
+                    sources.
+                </p>
+            </div>
+
+
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Global Investment Trends</h3>
+                <div class="chart-container">
+                    <canvas id="investmentChart"></canvas>
+                </div>
+                <p>
+                    Global investment in renewable technologies has reached unprecedented levels, with annual investments exceeding $380 billion. Solar power leads with $180 billion in yearly funding, followed by wind energy at $142 billion. The 25% year-over-year growth rate demonstrates strong market confidence in renewable energy solutions, driving continued innovation and scale in clean energy deployment worldwide.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="efficiency" class="page-section" data-aos="fade-up">
+        <h2>Energy Efficiency Measures</h2>
+        <div class="data-grid">
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Building Efficiency</h3>
+                <div class="chart-container">
+                    <canvas id="buildingEfficiencyChart"></canvas>
+                </div>
+                <p>
+                    Smart building solutions have revolutionized energy efficiency in modern construction. With energy
+                    savings ranging from 30-50%, these technologies have transformed how buildings consume and manage
+                    resources. The 45% adoption rate of smart technology and 60% implementation of green building
+                    standards shows a clear shift toward sustainable architecture and operations.
+                </p>
+            </div>
+
+
+            <div class="stat-card" data-aos="flip-right">
+                <h3>Technology Adoption</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/JaF-fq2Zn7I" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Smart technology transforming energy efficiency:</p>
+                <ul>
+                    <li>Smart Meters: Real-time monitoring reducing consumption by 15%</li>
+                    <li>IoT Integration: Connected devices optimizing energy use in 45% of modern buildings</li>
+                    <li>AI Systems: Predictive maintenance saving 30% in operational costs</li>
+                    <li>Automation: Smart buildings reducing energy waste by up to 40%</li>
+                    <li>Digital Twins: Virtual modeling improving efficiency by 25%</li>
+                </ul>
+            </div>
+
+            <div class="stat-card" data-aos="flip-right">
+                <h3>Industrial Optimization</h3>
+                <div class="chart-container">
+                    <canvas id="industrialEfficiencyChart"></canvas>
+                </div>
+                <p>
+                    Industrial optimization has achieved remarkable efficiency gains across manufacturing sectors. The distribution shows Waste Heat Recovery leading at 40% implementation, followed by Smart Manufacturing at 35% and Process Optimization at 25%. These improvements have resulted in significant cost savings and reduced environmental impact, with smart factories showing 30-40% lower energy consumption compared to traditional facilities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="innovation" class="page-section" data-aos="fade-up">
+        <h2>Technological Innovation</h2>
+        <div class="data-grid">
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Carbon Capture Technology</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/XxjNhLZCae0" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Revolutionary carbon capture solutions:</p>
+                <ul>
+                    <li>Current Global Capacity: Removing 40 Mt CO2 annually from atmosphere</li>
+                    <li>Direct Air Capture: Latest technology achieving 90% efficiency rate</li>
+                    <li>Industrial Implementation: 50% cost reduction projected by 2030</li>
+                    <li>Storage Solutions: Underground geological formations storing millions of tons</li>
+                    <li>Economic Impact: Creating new markets worth $1 trillion by 2050</li>
+                    <li>Environmental Benefits: Key technology for achieving net-zero emissions</li>
+                </ul>
+            </div>
+
+
+            <div class="stat-card" data-aos="flip-left">
+                <h3>Energy Storage Revolution</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/pLcqJ2DclEg" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>
+                    Energy storage solutions have seen dramatic improvements, with costs dropping 89% since 2010. The
+                    35% annual growth in storage capacity has enabled better integration of renewable energy sources
+                    into power grids. The 40% increase in grid integration capabilities marks a significant step toward
+                    reliable renewable energy systems.
+                </p>
+            </div>
+
+            <div class="stat-card" data-aos="flip-right">
+                <h3>Patent Registrations</h3>
+                <div class="chart-container">
+                    <canvas id="patentChart"></canvas>
+                </div>
+                <p>
+                    Clean technology patent registrations have surged impressively, reaching over 13,000 annual filings in 2023. The consistent 15% year-over-year growth reflects intense innovation in sustainable technologies. Energy storage patents have shown particularly strong momentum, increasing from 3,000 to 8,000 registrations between 2019-2023, highlighting the industry's focus on developing advanced storage solutions for renewable energy systems.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="feedback-redirect" class="page-section" data-aos="fade-up">
+        <div class="feedback-redirect-container">
+            <div class="feedback-content">
+                <h2><i class="fas fa-heart"></i> We Value Your Input</h2>
+                <p>Help us create a better future by sharing your thoughts on Strategic Solutions for Global Warming</p>
+                <a href="feedback.html" class="glow-button">
+                    <i class="fas fa-comments"></i>
+                    Share Your Feedback
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Strategies</h3>
+                <p>Exploring innovative solutions and proven strategies to combat global warming through technology,
+                    policy, and community action.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Main Page</a></li>
+                    <li><a href="#renewable">Renewable Energy</a></li>
+                    <li><a href="#efficiency">Energy Efficiency</a></li>
+                    <li><a href="#transport">Sustainable Transport</a></li>
+                    <li><a href="#innovation">Innovation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Technology Reports</a></li>
+                    <li><a href="#">Implementation Guides</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: strategies@globalwarming.org</li>
+                    <li>Phone: +919244372179</li>
+                    <li>Address: secter-infinity, The last Heven, Hell City</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 Global Warming Strategies. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Solar Growth Chart
+        const solarCtx = document.getElementById('solarGrowthChart').getContext('2d');
+        new Chart(solarCtx, {
+            type: 'line',
+            data: {
+                labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
+                datasets: [{
+                    label: 'Solar Capacity (GW)',
+                    data: [480, 586, 713, 849, 1000, 1200],
+                    borderColor: '#FDB813',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Investment Chart
+        const investmentCtx = document.getElementById('investmentChart').getContext('2d');
+        new Chart(investmentCtx, {
+            type: 'line',
+            data: {
+                labels: ['2019', '2020', '2021', '2022', '2023'],
+                datasets: [{
+                    label: 'Investment (Billion $)',
+                    data: [280, 300, 330, 360, 400],
+                    borderColor: '#4CAF50'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        const buildingEfficiencyCtx = document.getElementById('buildingEfficiencyChart').getContext('2d');
+        new Chart(buildingEfficiencyCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Smart Buildings', 'Traditional Buildings', 'Retrofitted Buildings', 'Green Certified'],
+                datasets: [{
+                    label: 'Energy Efficiency Score',
+                    data: [85, 40, 65, 90],
+                    backgroundColor: [
+                        '#4CAF50',  // Smart Buildings
+                        '#FF6384',  // Traditional
+                        '#36A2EB',  // Retrofitted
+                        '#FFCE56'   // Green Certified
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Efficiency Score (%)'
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Building Energy Performance Comparison'
+                    }
+                }
+            }
+        });
+
+        // Industrial Optimization Chart
+        const industrialEfficiencyCtx = document.getElementById('industrialEfficiencyChart').getContext('2d');
+        new Chart(industrialEfficiencyCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Process Optimization', 'Waste Heat Recovery', 'Smart Manufacturing', 'Energy Management'],
+                datasets: [{
+                    data: [25, 40, 35, 20],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Industrial Efficiency Improvements (%)'
+                    }
+                }
+            }
+        });
+
+        // Patent Registrations Chart
+        const patentCtx = document.getElementById('patentChart').getContext('2d');
+        new Chart(patentCtx, {
+            type: 'line',
+            data: {
+                labels: ['2019', '2020', '2021', '2022', '2023'],
+                datasets: [{
+                    label: 'Clean Tech Patents',
+                    data: [9000, 10500, 11800, 12500, 13000],
+                    borderColor: '#4CAF50',
+                    fill: false
+                }, {
+                    label: 'Energy Storage Patents',
+                    data: [3000, 4200, 5500, 6800, 8000],
+                    borderColor: '#FF6384',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Patents'
+                        }
+                    }
+                }
+            }
+        });
+
+
+        // Add more chart initializations for other datasets
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
