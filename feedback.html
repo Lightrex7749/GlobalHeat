@@ -387,21 +387,31 @@
 </head>
 
 <body>
+    <a href="#feedback" class="skip-to-content">Skip to main content</a>
+
     <header>
         <div class="navbar">
-            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth" class="responsive-img" data-aos="fade-right"></a>
+            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth logo" class="responsive-img" data-aos="fade-right"></a>
             <div class="navbar-right">
                 <h1 data-aos="fade-down">Share Your Thoughts and Experiences</h1>
-                <nav>
+                <nav role="navigation" aria-label="Main navigation">
+                    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <span class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
                     <ul>
                         <li><a href="index.html" data-aos="fade-right"><i class="fas fa-home"></i> Main Page</a></li>
-                        <li><a href="feedback.html" data-aos="fade-right"><i class="fas fa-comment"></i> Feedback</a>
-                        </li>
-                        <li><a href="#success-stories" data-aos="fade-right"><i class="fas fa-star"></i> Success
-                                Stories</a></li>
-                        <li><a href="#suggestions" data-aos="fade-right"><i class="fas fa-lightbulb"></i>
-                                Suggestions</a></li>
+                        <li><a href="causes.html" data-aos="fade-right"><i class="fas fa-industry"></i> Causes</a></li>
+                        <li><a href="benefits.html" data-aos="fade-right"><i class="fas fa-leaf"></i> Benefits</a></li>
+                        <li><a href="strategies.html" data-aos="fade-right"><i class="fas fa-lightbulb"></i> Strategies</a></li>
+                        <li><a href="recycling.html" data-aos="fade-right"><i class="fas fa-recycle"></i> Recycling</a></li>
                     </ul>
+                    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </nav>
             </div>
         </div>

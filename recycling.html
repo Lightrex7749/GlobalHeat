@@ -77,12 +77,21 @@
 
 
 <body>
+    <a href="#materials" class="skip-to-content">Skip to main content</a>
+
     <header>
         <div class="navbar">
-            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth" class="responsive-img" data-aos="fade-right"></a>
+            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth logo" class="responsive-img" data-aos="fade-right"></a>
             <div class="navbar-right">
                 <h1 data-aos="fade-down">Recycling: Building a Sustainable Future</h1>
-                <nav>
+                <nav role="navigation" aria-label="Main navigation">
+                    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <span class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
                     <ul>
                         <li><a href="index.html" data-aos="fade-right"><i class="fas fa-home"></i> Main Page</a></li>
                         <li><a href="#materials" data-aos="fade-right"><i class="fas fa-recycle"></i> Materials</a></li>
@@ -90,6 +99,9 @@
                         <li><a href="#impact" data-aos="fade-right"><i class="fas fa-chart-bar"></i> Impact</a></li>
                         <li><a href="#guidelines" data-aos="fade-right"><i class="fas fa-book"></i> Guidelines</a></li>
                     </ul>
+                    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </nav>
             </div>
         </div>

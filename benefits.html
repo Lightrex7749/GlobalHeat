@@ -144,21 +144,31 @@
 </head>
 
 <body>
+    <a href="#environmental" class="skip-to-content">Skip to main content</a>
+
     <header>
         <div class="navbar">
-            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth" class="responsive-img" data-aos="fade-right"></a>
+            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth logo" class="responsive-img" data-aos="fade-right"></a>
             <div class="navbar-right">
                 <h1 data-aos="fade-down">Benefits of Addressing Global Warming</h1>
-                <nav>
+                <nav role="navigation" aria-label="Main navigation">
+                    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <span class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
                     <ul>
                         <li><a href="index.html" data-aos="fade-right"><i class="fas fa-home"></i> Main Page</a></li>
-                        <li><a href="#environmental" data-aos="fade-right"><i class="fas fa-leaf"></i> Environmental</a>
-                        </li>
-                        <li><a href="#economic" data-aos="fade-right"><i class="fas fa-chart-line"></i> Economic</a>
-                        </li>
+                        <li><a href="#environmental" data-aos="fade-right"><i class="fas fa-leaf"></i> Environmental</a></li>
+                        <li><a href="#economic" data-aos="fade-right"><i class="fas fa-chart-line"></i> Economic</a></li>
                         <li><a href="#social" data-aos="fade-right"><i class="fas fa-users"></i> Social</a></li>
                         <li><a href="#health" data-aos="fade-right"><i class="fas fa-heartbeat"></i> Health</a></li>
                     </ul>
+                    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </nav>
             </div>
         </div>
