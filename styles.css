@@ -1,20 +1,126 @@
+/* CSS Variables for theming */
+:root {
+    --bg-primary: #f5f7fa;
+    --bg-secondary: #c3cfe2;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-alt-bg: rgba(240, 240, 240, 0.9);
+    --header-overlay: rgba(0, 0, 0, 0.6);
+    --shadow: rgba(0, 0, 0, 0.1);
+    --accent-color: #fdbb2d;
+}
+
+body.dark-mode {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --text-primary: #eee;
+    --text-secondary: #bbb;
+    --card-bg: rgba(30, 30, 46, 0.95);
+    --card-alt-bg: rgba(40, 40, 56, 0.95);
+    --header-overlay: rgba(0, 0, 0, 0.8);
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-to-content:focus {
+    top: 0;
 }
 
 
 header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(assect/images/navbar2.jpg);
-            background-position: center center;
-            object-fit: cover;
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            animation: headerBgZoom 10s infinite alternate;
+    background-image: linear-gradient(var(--header-overlay), var(--header-overlay)), url(assect/images/navbar2.jpg);
+    background-position: center center;
+    object-fit: cover;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: headerBgZoom 10s infinite alternate;
+    position: relative;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(20deg);
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 @media screen and (max-width: 768px) {
     header {
@@ -41,26 +147,76 @@ header {
     }
 }
 
-nav ul {
+nav ul.nav-menu {
     list-style-type: none;
     padding: 0;
+    transition: all 0.3s ease;
 }
 
-nav ul li {
+nav ul.nav-menu li {
     display: inline;
     margin-right: 20px;
 }
 
-nav ul li a {
+nav ul.nav-menu li a {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
     transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 5px;
 }
 
-nav ul li a:hover {
-    color: #fdbb2d;
+nav ul.nav-menu li a:hover,
+nav ul.nav-menu li a:focus {
+    color: var(--accent-color);
     transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+/* Mobile Navigation */
+@media screen and (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    .theme-toggle {
+        top: 20px;
+        right: 20px;
+    }
+
+    nav ul.nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        height: 100vh;
+        background: linear-gradient(135deg, #1a2a6c 0%, #2c5364 100%);
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        transition: left 0.3s ease;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    nav ul.nav-menu.active {
+        left: 0;
+    }
+
+    nav ul.nav-menu li {
+        display: block;
+        margin: 15px 0;
+    }
+
+    nav ul.nav-menu li a {
+        display: block;
+        font-size: 1.1rem;
+        padding: 12px;
+    }
 }
 
 .page-section {
@@ -68,9 +224,9 @@ nav ul li a:hover {
     padding: 3rem;
     margin: 20px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    background: rgba(255, 255, 255, 0.9);
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow);
+    background: var(--card-bg);
+    transition: transform 0.3s ease, background 0.3s ease;
     padding-bottom: 70px;
 }
 
@@ -81,7 +237,17 @@ nav ul li a:hover {
 #causes,
 #strategies,
 #recycling {
-    background: rgba(240, 240, 240, 0.9);
+    background: var(--card-alt-bg);
+}
+
+.page-section h2,
+.page-section h3 {
+    color: var(--text-primary);
+}
+
+.page-section p,
+.page-section li {
+    color: var(--text-secondary);
 }
 
 footer {
@@ -811,5 +977,159 @@ canvas {
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+/* ==================== PAGE LOADER ==================== */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a2a6c 0%, #2c5364 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+.loader-content {
+    text-align: center;
+    color: white;
+}
+
+.loader-icon {
+    font-size: 4rem;
+    animation: spin 2s linear infinite;
+    margin-bottom: 20px;
+}
+
+.loader-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==================== SHARE BUTTONS ==================== */
+.share-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    z-index: 998;
+}
+
+.share-btn {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+    transform: scale(1.1) rotate(90deg);
+}
+
+.share-options {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.share-container:hover .share-options,
+.share-container:focus-within .share-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.share-option {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.share-option:hover {
+    transform: scale(1.15);
+}
+
+.share-option.twitter {
+    background: #1DA1F2;
+}
+
+.share-option.facebook {
+    background: #4267B2;
+}
+
+.share-option.linkedin {
+    background: #0077B5;
+}
+
+.share-option.email {
+    background: #EA4335;
+}
+
+/* ==================== RESPONSIVE IMPROVEMENTS ==================== */
+@media (max-width: 768px) {
+    .share-container {
+        bottom: 90px;
+        right: 20px;
+    }
+
+    .share-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .share-option {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+    .page-loader,
+    .theme-toggle,
+    .mobile-menu-toggle,
+    .scroll-to-top,
+    .share-container {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
     }
 }

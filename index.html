@@ -4,8 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about global warming causes, impacts, and solutions through interactive data visualizations. Discover climate action strategies, renewable energy benefits, and recycling initiatives.">
+    <meta name="keywords" content="global warming, climate change, renewable energy, sustainability, carbon emissions, environmental conservation, climate action, data visualization">
+    <meta name="author" content="Lightrex7749">
+    <meta name="theme-color" content="#1a2a6c">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="GlobalHeat - Climate Change Awareness Platform">
+    <meta property="og:description" content="Interactive educational platform exploring global warming causes, solutions, and climate action strategies.">
+    <meta property="og:image" content="assect/images/earth-warming.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lightrex7749.github.io/GlobalHeat">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GlobalHeat - Climate Change Awareness">
+    <meta name="twitter:description" content="Interactive platform for understanding global warming and climate solutions.">
+    <meta name="twitter:image" content="assect/images/earth-warming.jpg">
+    
     <title>Global Heat: A Critical Global Issue</title>
-    <link rel="icon" type="image/x-icon" href="/assect/images/planet-earth.png">
+    <link rel="icon" type="image/x-icon" href="assect/images/planet-earth.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -14,28 +32,49 @@
 </head>
 
 <body>
+    <!-- Loading Animation -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <i class="fas fa-globe-americas loader-icon"></i>
+            <div class="loader-text">Loading GlobalHeat...</div>
+        </div>
+    </div>
+
+    <!-- Skip to content link for accessibility -->
+    <a href="#home" class="skip-to-content">Skip to main content</a>
+
     <!-- Header -->
     <header>
         <div class="navbar">
-            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth" class="responsive-img" data-aos="fade-right"></a>
+            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth logo" class="responsive-img" data-aos="fade-right"></a>
             <div class="navbar-right">
                 <h1 data-aos="fade-down">Global Heat: A Critical Global Issue</h1>
-                <nav>
-                    <ul>
-                        <li><a href="#home" data-aos="fade-right"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="#causes" data-aos="fade-right" data-aos-delay="100"><i class="fas fa-search"></i>
+                <nav role="navigation" aria-label="Main navigation">
+                    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <span class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="#home" data-aos="fade-right"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
+                        <li><a href="#causes" data-aos="fade-right" data-aos-delay="100"><i class="fas fa-search" aria-hidden="true"></i>
                                 Causes</a></li>
                         <li><a href="#benefits" data-aos="fade-right" data-aos-delay="200"><i
-                                    class="fas fa-chart-line"></i> Benefits</a></li>
+                                    class="fas fa-chart-line" aria-hidden="true"></i> Benefits</a></li>
                         <li><a href="#strategies" data-aos="fade-right" data-aos-delay="300"><i
-                                    class="fas fa-lightbulb"></i> Strategies</a></li>
+                                    class="fas fa-lightbulb" aria-hidden="true"></i> Strategies</a></li>
                         <li><a href="#recycling" data-aos="fade-right" data-aos-delay="400"><i
-                                    class="fas fa-recycle"></i> Recycling</a></li>
+                                    class="fas fa-recycle" aria-hidden="true"></i> Recycling</a></li>
                         <li><a href="#feedback" data-aos="fade-right" data-aos-delay="500"><i
-                                    class="fas fa-comments"></i> Feedback</a></li>
-                        <li><a href="#footer" data-aos="fade-right" data-aos-delay="600"><i class="fas fa-envelope"></i>
+                                    class="fas fa-comments" aria-hidden="true"></i> Feedback</a></li>
+                        <li><a href="#footer" data-aos="fade-right" data-aos-delay="600"><i class="fas fa-envelope" aria-hidden="true"></i>
                                 Contact</a></li>
                     </ul>
+                    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </nav>
             </div>
         </div>
@@ -87,7 +126,7 @@
             environmental changes.
         </p>
         <div class="imgcent">
-            <img src="assect/images/earth-warming.jpg" alt="Earth warming" class="animated-img responsive-img">
+            <img src="assect/images/earth-warming.jpg" alt="Earth warming" class="animated-img responsive-img" loading="lazy">
         </div>
         <div class="data-grid">
             <div class="stat-card" data-aos="fade-up">
@@ -359,6 +398,28 @@
         </div>
     </footer>
     
+    <!-- Share Buttons -->
+    <div class="share-container">
+        <button class="share-btn" aria-label="Share this page" title="Share">
+            <i class="fas fa-share-alt"></i>
+        </button>
+        <div class="share-options">
+            <a href="#" class="share-option twitter" aria-label="Share on Twitter" onclick="shareOnTwitter(); return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="share-option facebook" aria-label="Share on Facebook" onclick="shareOnFacebook(); return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="share-option linkedin" aria-label="Share on LinkedIn" onclick="shareOnLinkedIn(); return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="share-option email" aria-label="Share via Email" onclick="shareViaEmail(); return false;">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
     <script src="scripts.js"></script>
 
 </body>

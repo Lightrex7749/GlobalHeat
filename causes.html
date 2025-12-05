@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the major causes of global warming including industrial emissions, transportation, deforestation, and agriculture. Data-driven analysis with interactive charts.">
+    <meta name="keywords" content="global warming causes, industrial emissions, carbon footprint, deforestation, transportation emissions, greenhouse gases">
+    <meta name="theme-color" content="#1a2a6c">
     <title>Causes of Global Warming</title>
-    <link rel="icon" type="image/x-icon" href="/assect/images/planet-earth.png">
+    <link rel="icon" type="image/x-icon" href="assect/images/planet-earth.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles.css">
@@ -14,12 +17,21 @@
 </head>
 
 <body>
+    <a href="#industrial" class="skip-to-content">Skip to main content</a>
+    
     <header>
         <div class="navbar">
-            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth" class="responsive-img" data-aos="fade-right"></a>
+            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth logo" class="responsive-img" data-aos="fade-right"></a>
             <div class="navbar-right">
                 <h1 data-aos="fade-down">Major Causes of Global Warming</h1>
-                <nav>
+                <nav role="navigation" aria-label="Main navigation">
+                    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <span class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
                     <ul>
                         <li><a href="index.html" data-aos="fade-right"><i class="fas fa-home"></i> Main Page</a></li>
                         <li><a href="#industrial" data-aos="fade-right"><i class="fas fa-industry"></i> Industrial</a>
@@ -31,6 +43,9 @@
                         <li><a href="#agriculture" data-aos="fade-right"><i class="fas fa-tractor"></i> Agriculture</a>
                         </li>
                     </ul>
+                    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </nav>
             </div>
         </div>
@@ -263,6 +278,7 @@
             <p>© 2023 Global Warming Causes. All rights reserved.</p>
         </div>
     </footer>
+    <script src="main.js"></script>
     <script src="script.js"></script>
 </body>
 
