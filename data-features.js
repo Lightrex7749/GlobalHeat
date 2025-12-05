@@ -1,3 +1,9 @@
+// Disable all Chart.js animations for performance
+if (typeof Chart !== 'undefined') {
+    Chart.defaults.animation = false;
+    Chart.defaults.animations = false;
+}
+
 // Carbon Footprint Calculator
 function calculateFootprint() {
     const miles = parseFloat(document.getElementById('miles').value) || 0;
@@ -111,10 +117,10 @@ function currentSlide(index) {
     showSlide(index);
 }
 
-// Auto-rotate carousel
-setInterval(() => {
-    showSlide(currentSlideIndex + 1);
-}, 5000);
+// Auto-rotate carousel - DISABLED for performance
+// setInterval(() => {
+//     showSlide(currentSlideIndex + 1);
+// }, 5000);
 
 // Temperature Chart
 function createTemperatureChart() {

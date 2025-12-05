@@ -2640,32 +2640,59 @@ canvas {
     animation: none !important;
 }
 
-/* Better text visibility */
-.stat-card h3 {
-    color: #1a2a6c !important;
+/* Better text visibility - ENFORCED */
+.stat-card h3,
+.stat-card h2,
+.stat-card h4 {
+    color: #000000 !important;
     font-weight: 700 !important;
+    text-shadow: none !important;
 }
 
-body.dark-mode .stat-card h3 {
+body.dark-mode .stat-card h3,
+body.dark-mode .stat-card h2,
+body.dark-mode .stat-card h4 {
     color: #ffffff !important;
 }
 
-.stat-card p {
-    color: #2c3e50 !important;
+.stat-card p,
+.stat-card li,
+.stat-card span,
+.stat-card div {
+    color: #000000 !important;
     font-weight: 500 !important;
+    text-shadow: none !important;
 }
 
-body.dark-mode .stat-card p {
-    color: #e8e8e8 !important;
+body.dark-mode .stat-card p,
+body.dark-mode .stat-card li,
+body.dark-mode .stat-card span,
+body.dark-mode .stat-card div {
+    color: #ffffff !important;
 }
 
 .stat-card ul li {
-    color: #34495e !important;
+    color: #000000 !important;
     font-weight: 500 !important;
 }
 
 body.dark-mode .stat-card ul li {
-    color: #d0d0d0 !important;
+    color: #ffffff !important;
+}
+
+/* Ensure all text in sections is visible */
+.page-section h2,
+.page-section h3,
+.page-section p,
+.page-section li {
+    color: #000000 !important;
+}
+
+body.dark-mode .page-section h2,
+body.dark-mode .page-section h3,
+body.dark-mode .page-section p,
+body.dark-mode .page-section li {
+    color: #ffffff !important;
 }
 
 /* Improve navbar on all pages */
@@ -2716,3 +2743,35 @@ footer a:hover {
         transition: none !important;
     }
 }
+
+/* DISABLE ALL ANIMATIONS FOR PERFORMANCE */
+.particle,
+.particles-container {
+    display: none !important;
+}
+
+.reading-progress::after,
+header::before,
+.page-loader {
+    animation: none !important;
+    display: none !important;
+}
+
+* {
+    animation: none !important;
+}
+
+@keyframes float-particle,
+@keyframes progressShine,
+@keyframes headerShine,
+@keyframes slideInLeft,
+@keyframes slideInRight,
+@keyframes fadeIn {
+    0%, 100% { opacity: 1; transform: none; }
+}
+
+/* Keep only essential transitions */
+a, button, .theme-toggle {
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+

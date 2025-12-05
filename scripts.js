@@ -1,3 +1,9 @@
+// Disable all Chart.js animations for performance
+if (typeof Chart !== 'undefined') {
+    Chart.defaults.animation = false;
+    Chart.defaults.animations = false;
+}
+
 //feedback
 document.getElementById('feedbackForm').addEventListener('submit', function (e) {
     e.preventDefault();

@@ -285,21 +285,9 @@ const animateCounter = (counter) => {
     
     if (isNaN(numericValue)) return;
     
-    const duration = 2000;
-    const steps = 60;
-    const stepValue = numericValue / steps;
-    let current = 0;
-    
-    const timer = setInterval(() => {
-        current += stepValue;
-        if (current >= numericValue) {
-            current = numericValue;
-            clearInterval(timer);
-        }
-        
-        const suffix = target.replace(/[0-9.]/g, '');
-        counter.textContent = current.toFixed(1) + suffix;
-    }, duration / steps);
+    // Instant display instead of animation for performance
+    const suffix = target.replace(/[0-9.]/g, '');
+    counter.textContent = numericValue.toFixed(1) + suffix;
 };
 
 const counterObserver = new IntersectionObserver((entries) => {

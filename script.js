@@ -1,3 +1,9 @@
+// Disable all Chart.js animations for performance
+Chart.defaults.animation = false;
+Chart.defaults.animations = false;
+Chart.defaults.responsive = true;
+Chart.defaults.maintainAspectRatio = true;
+
 // Energy Consumption Chart
 const energyCtx = document.getElementById('energyConsumptionChart').getContext('2d');
 new Chart(energyCtx, {
