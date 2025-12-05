@@ -1,7 +1,8 @@
 // Initialize AOS animations
 AOS.init({
-    duration: 1000,
-    once: true
+    duration: 600,
+    once: true,
+    disable: 'mobile'
 });
 
 // ==================== DARK MODE FUNCTIONALITY ====================
@@ -403,15 +404,7 @@ document.querySelectorAll('.stagger-item').forEach(item => {
 });
 
 // ==================== DYNAMIC GLOW EFFECTS ====================
-setInterval(() => {
-    const glowElements = document.querySelectorAll('.counter');
-    glowElements.forEach(el => {
-        el.style.textShadow = `
-            0 0 ${Math.random() * 20 + 10}px var(--accent-color),
-            0 0 ${Math.random() * 40 + 20}px var(--accent-color)
-        `;
-    });
-}, 2000);
+// Disabled for performance optimization
 
 // ==================== EASTER EGG: KONAMI CODE ====================
 let konamiCode = [];
@@ -428,16 +421,6 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ==================== PERFORMANCE MONITORING ====================
-if ('PerformanceObserver' in window) {
-    const perfObserver = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-            if (entry.duration > 100) {
-                console.warn(`Slow interaction detected: ${entry.name} took ${entry.duration}ms`);
-            }
-        }
-    });
-    
-    perfObserver.observe({ entryTypes: ['measure', 'navigation'] });
-}
+// Disabled for production - no console spam
 
-console.log('✅ GlobalHeat initialized successfully with advanced features!');
+// Silent initialization - no console logs
