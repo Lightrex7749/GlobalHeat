@@ -1,9 +1,4 @@
 // Energy Consumption Chart
-AOS.init({
-    duration: 1000,
-    once: true
-}); 
-
 const energyCtx = document.getElementById('energyConsumptionChart').getContext('2d');
 new Chart(energyCtx, {
     type: 'bar',

@@ -9,11 +9,7 @@
     <meta name="theme-color" content="#1a2a6c">
     <title>Share Your Feedback - Global Warming Initiative</title>
     <link rel="icon" type="image/x-icon" href="assect/images/planet-earth.png">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
@@ -391,9 +387,9 @@
 
     <header>
         <div class="navbar">
-            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth logo" class="responsive-img" data-aos="fade-right"></a>
+            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth logo" class="responsive-img"></a>
             <div class="navbar-right">
-                <h1 data-aos="fade-down">Share Your Thoughts and Experiences</h1>
+                <h1>Share Your Thoughts and Experiences</h1>
                 <nav role="navigation" aria-label="Main navigation">
                     <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                         <span class="hamburger-icon">
@@ -403,11 +399,11 @@
                         </span>
                     </button>
                     <ul class="nav-menu">
-                        <li><a href="index.html" data-aos="fade-right"><i class="fas fa-home"></i> Main Page</a></li>
-                        <li><a href="causes.html" data-aos="fade-right"><i class="fas fa-industry"></i> Causes</a></li>
-                        <li><a href="benefits.html" data-aos="fade-right"><i class="fas fa-leaf"></i> Benefits</a></li>
-                        <li><a href="strategies.html" data-aos="fade-right"><i class="fas fa-lightbulb"></i> Strategies</a></li>
-                        <li><a href="recycling.html" data-aos="fade-right"><i class="fas fa-recycle"></i> Recycling</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Main Page</a></li>
+                        <li><a href="causes.html"><i class="fas fa-industry"></i> Causes</a></li>
+                        <li><a href="benefits.html"><i class="fas fa-leaf"></i> Benefits</a></li>
+                        <li><a href="strategies.html"><i class="fas fa-lightbulb"></i> Strategies</a></li>
+                        <li><a href="recycling.html"><i class="fas fa-recycle"></i> Recycling</a></li>
                     </ul>
                     <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light theme">
                         <i class="fas fa-moon"></i>
@@ -416,7 +412,7 @@
             </div>
         </div>
     </header>
-    <section id="feedback" class="page-section" data-aos="fade-up">
+    <section id="feedback" class="page-section">
         <h2>Share Your Thoughts</h2>
         <div class="feedback-container">
             <div class="feedback-header">
@@ -477,10 +473,6 @@
     </section>
 
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
 
         document.getElementById('feedbackForm').addEventListener('submit', function (e) {
             e.preventDefault();

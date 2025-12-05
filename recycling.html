@@ -9,11 +9,7 @@
     <meta name="theme-color" content="#1a2a6c">
     <title>Recycling: Key to Sustainability</title>
     <link rel="icon" type="image/x-icon" href="assect/images/planet-earth.png">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         .efficiency-stats {
             margin-top: 15px;
@@ -81,9 +77,9 @@
 
     <header>
         <div class="navbar">
-            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth logo" class="responsive-img" data-aos="fade-right"></a>
+            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth logo" class="responsive-img"></a>
             <div class="navbar-right">
-                <h1 data-aos="fade-down">Recycling: Building a Sustainable Future</h1>
+                <h1>Recycling: Building a Sustainable Future</h1>
                 <nav role="navigation" aria-label="Main navigation">
                     <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                         <span class="hamburger-icon">
@@ -93,11 +89,11 @@
                         </span>
                     </button>
                     <ul class="nav-menu">
-                        <li><a href="index.html" data-aos="fade-right"><i class="fas fa-home"></i> Main Page</a></li>
-                        <li><a href="#materials" data-aos="fade-right"><i class="fas fa-recycle"></i> Materials</a></li>
-                        <li><a href="#process" data-aos="fade-right"><i class="fas fa-cogs"></i> Process</a></li>
-                        <li><a href="#impact" data-aos="fade-right"><i class="fas fa-chart-bar"></i> Impact</a></li>
-                        <li><a href="#guidelines" data-aos="fade-right"><i class="fas fa-book"></i> Guidelines</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Main Page</a></li>
+                        <li><a href="#materials"><i class="fas fa-recycle"></i> Materials</a></li>
+                        <li><a href="#process"><i class="fas fa-cogs"></i> Process</a></li>
+                        <li><a href="#impact"><i class="fas fa-chart-bar"></i> Impact</a></li>
+                        <li><a href="#guidelines"><i class="fas fa-book"></i> Guidelines</a></li>
                     </ul>
                     <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light theme">
                         <i class="fas fa-moon"></i>
@@ -107,10 +103,10 @@
         </div>
     </header>
 
-    <section id="materials" class="page-section" data-aos="fade-up">
+    <section id="materials" class="page-section">
         <h2>Recyclable Materials</h2>
         <div class="data-grid">
-            <div class="stat-card" data-aos="flip-left">
+            <div class="stat-card">
                 <h3>Plastic Recycling</h3>
                 <div class="chart-container">
                     <canvas id="plasticRecyclingChart"></canvas>
@@ -130,7 +126,7 @@
                 </div>
             </div>
 
-            <div class="stat-card" data-aos="flip-right">
+            <div class="stat-card">
                 <h3>Material Distribution</h3>
                 <div class="chart-container">
                     <canvas id="materialDistributionChart"></canvas>
@@ -150,7 +146,7 @@
                 </div>
             </div>
 
-            <div class="stat-card" data-aos="flip-left">
+            <div class="stat-card">
                 <h3>Paper & Cardboard</h3>
                 <div class="chart-container">
                     <canvas id="paperRecyclingChart"></canvas>
@@ -172,10 +168,10 @@
         </div>
     </section>
 
-    <section id="process" class="page-section" data-aos="fade-up">
+    <section id="process" class="page-section">
         <h2>Recycling Process</h2>
         <div class="data-grid">
-            <div class="stat-card" data-aos="flip-left">
+            <div class="stat-card">
                 <h3>Collection Methods</h3>
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/b7GMpjx2jDQ" title="Modern Recycling Collection"
@@ -199,7 +195,7 @@
                 </div>
             </div>
 
-            <div class="stat-card" data-aos="flip-right">
+            <div class="stat-card">
                 <h3>Process Flow</h3>
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/cNPEH0GOhRw?si=8Q4FSya1008V9xS6" title="Recycling Process Flow"
@@ -224,7 +220,7 @@
             </div>
 
 
-            <div class="stat-card" data-aos="flip-right">
+            <div class="stat-card">
                 <h3>Processing Efficiency</h3>
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/s4LZwCDaoQM"
@@ -254,10 +250,10 @@
         </div>
     </section>
 
-    <section id="impact" class="page-section" data-aos="fade-up">
+    <section id="impact" class="page-section">
         <h2>Environmental Impact</h2>
         <div class="data-grid">
-            <div class="stat-card" data-aos="flip-left">
+            <div class="stat-card">
                 <h3>Carbon Reduction</h3>
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/8q7_aV8eLUE" title="Carbon Reduction Impact"
@@ -281,7 +277,7 @@
                 </div>
             </div>
 
-            <div class="stat-card" data-aos="flip-left">
+            <div class="stat-card">
                 <h3>Impact Metrics</h3>
                 <div class="chart-container">
                     <canvas id="impactMetricsChart"></canvas>
@@ -301,7 +297,7 @@
                 </div>
             </div>
 
-            <div class="stat-card" data-aos="flip-right">
+            <div class="stat-card">
                 <h3>Resource Conservation</h3>
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/VlRVPum9cp4" title="Resource Conservation Impact"
@@ -327,7 +323,7 @@
         </div>
     </section>
 
-    <section id="feedback-redirect" class="page-section" data-aos="fade-up">
+    <section id="feedback-redirect" class="page-section">
         <div class="feedback-redirect-container">
             <div class="feedback-content">
                 <h2><i class="fas fa-heart"></i> We Value Your Input</h2>
@@ -341,10 +337,6 @@
     </section>
 
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
 
         // Plastic Recycling Chart
         const plasticCtx = document.getElementById('plasticRecyclingChart').getContext('2d');

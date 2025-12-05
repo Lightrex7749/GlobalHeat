@@ -1,7 +1,3 @@
-AOS.init({
-    duration: 1000,
-    once: true
-});        
 //feedback
 document.getElementById('feedbackForm').addEventListener('submit', function (e) {
     e.preventDefault();

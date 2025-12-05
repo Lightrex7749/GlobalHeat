@@ -1,10 +1,3 @@
-// Initialize AOS animations
-AOS.init({
-    duration: 600,
-    once: true,
-    disable: 'mobile'
-});
-
 // ==================== DARK MODE FUNCTIONALITY ====================
 const themeToggle = document.querySelector('.theme-toggle');
 const body = document.body;

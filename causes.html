@@ -8,12 +8,8 @@
     <meta name="keywords" content="global warming causes, industrial emissions, carbon footprint, deforestation, transportation emissions, greenhouse gases">
     <meta name="theme-color" content="#1a2a6c">
     <title>Causes of Global Warming</title>
-    <link rel="icon" type="image/x-icon" href="assect/images/planet-earth.png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assect/images/planet-earth.png">    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
@@ -21,9 +17,9 @@
     
     <header>
         <div class="navbar">
-            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth logo" class="responsive-img" data-aos="fade-right"></a>
+            <a href="index.html"><img src="assect/images/planet-earth.png" alt="Earth logo" class="responsive-img"></a>
             <div class="navbar-right">
-                <h1 data-aos="fade-down">Major Causes of Global Warming</h1>
+                <h1>Major Causes of Global Warming</h1>
                 <nav role="navigation" aria-label="Main navigation">
                     <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                         <span class="hamburger-icon">
@@ -33,14 +29,14 @@
                         </span>
                     </button>
                     <ul class="nav-menu">
-                        <li><a href="index.html" data-aos="fade-right"><i class="fas fa-home"></i> Main Page</a></li>
-                        <li><a href="#industrial" data-aos="fade-right"><i class="fas fa-industry"></i> Industrial</a>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Main Page</a></li>
+                        <li><a href="#industrial"><i class="fas fa-industry"></i> Industrial</a>
                         </li>
-                        <li><a href="#transportation" data-aos="fade-right"><i class="fas fa-car"></i>
+                        <li><a href="#transportation"><i class="fas fa-car"></i>
                                 Transportation</a></li>
-                        <li><a href="#deforestation" data-aos="fade-right"><i class="fas fa-tree"></i> Deforestation</a>
+                        <li><a href="#deforestation"><i class="fas fa-tree"></i> Deforestation</a>
                         </li>
-                        <li><a href="#agriculture" data-aos="fade-right"><i class="fas fa-tractor"></i> Agriculture</a>
+                        <li><a href="#agriculture"><i class="fas fa-tractor"></i> Agriculture</a>
                         </li>
                     </ul>
                     <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light theme">
@@ -51,10 +47,10 @@
         </div>
     </header>
 
-    <section id="industrial" class="page-section" data-aos="fade-up">
+    <section id="industrial" class="page-section">
         <h2>Industrial Emissions</h2>
         <div class="data-grid">
-            <div class="stat-card" data-aos="flip-left">
+            <div class="stat-card">
                 <h3>Manufacturing Impact</h3>
                 <div class="chart-container">
                     <canvas id="manufacturingImpactChart"></canvas>
@@ -67,7 +63,7 @@
                     <li>Chemical Processing: 5-7% global emissions</li>
                 </ul>
             </div>
-            <div class="stat-card" data-aos="fade-up">
+            <div class="stat-card">
                 <h3>Understanding Industrial Impact</h3>
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/ipVxxxqwBQw" frameborder="0" allowfullscreen></iframe>
@@ -81,7 +77,7 @@
                 </ul>
             </div>
 
-            <div class="stat-card" data-aos="flip-right">
+            <div class="stat-card">
                 <h3>Energy Consumption</h3>
                 <div class="chart-container">
                     <canvas id="energyConsumptionChart"></canvas>
@@ -96,10 +92,10 @@
         </div>
     </section>
 
-    <section id="transportation" class="page-section" data-aos="fade-up">
+    <section id="transportation" class="page-section">
         <h2>Transportation Emissions</h2>
         <div class="data-grid">
-            <div class="stat-card" data-aos="flip-left">
+            <div class="stat-card">
                 <h3>Vehicle Emissions</h3>
                 <div class="chart-container">
                     <canvas id="vehicleEmissionsChart"></canvas>
@@ -111,7 +107,7 @@
                     <li>Shipping: 14% of transport emissions</li>
                 </ul>
             </div>
-            <div class="stat-card" data-aos="fade-up">
+            <div class="stat-card">
                 <h3>Transportation's Role in Climate Change</h3>
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/FlPSs7ytvT0?si=Kie03-fZHCrtbPB4" frameborder="0" allowfullscreen></iframe>
@@ -123,7 +119,7 @@
                     <li>Maritime transport environmental impact</li>
                 </ul>
             </div>
-            <div class="stat-card" data-aos="flip-up">
+            <div class="stat-card">
                 <h3>Urban Transit Impact</h3>
                 <div class="chart-container">
                     <canvas id="urbanTransitChart"></canvas>
@@ -140,10 +136,10 @@
         </div>
     </section>
 
-    <section id="deforestation" class="page-section" data-aos="fade-up">
+    <section id="deforestation" class="page-section">
         <h2>Deforestation Impact</h2>
         <div class="data-grid">
-            <div class="stat-card" data-aos="flip-left">
+            <div class="stat-card">
                 <h3>Forest Loss Statistics</h3>
                 <div class="chart-container">
                     <canvas id="forestLossChart"></canvas>
@@ -155,7 +151,7 @@
                     <li>Carbon Storage Impact: 15% of global emissions</li>
                 </ul>
             </div>
-            <div class="stat-card" data-aos="fade-up">
+            <div class="stat-card">
                 <h3>Deforestation Crisis</h3>
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/Ic-J6hcSKa8" frameborder="0" allowfullscreen></iframe>
@@ -168,7 +164,7 @@
                 </ul>
             </div>
 
-            <div class="stat-card" data-aos="flip-right">
+            <div class="stat-card">
                 <h3>Biodiversity Impact</h3>
                 <div class="chart-container">
                     <canvas id="biodiversityImpactChart"></canvas>
@@ -185,10 +181,10 @@
         </div>
     </section>
 
-    <section id="agriculture" class="page-section" data-aos="fade-up">
+    <section id="agriculture" class="page-section">
         <h2>Agricultural Emissions</h2>
         <div class="data-grid">
-            <div class="stat-card" data-aos="flip-left">
+            <div class="stat-card">
                 <h3>Livestock Impact</h3>
                 <div class="chart-container">
                     <canvas id="livestockImpactChart"></canvas>
@@ -200,7 +196,7 @@
                     <li>Manure management: 15% of livestock impact</li>
                 </ul>
             </div>
-            <div class="stat-card" data-aos="fade-up">
+            <div class="stat-card">
                 <h3>Agricultural Emissions Explained</h3>
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/iG7sskGIWl4?si=1pmYgyYWCUTRJkP2" frameborder="0" allowfullscreen></iframe>
@@ -214,7 +210,7 @@
             </div>
 
 
-            <div class="stat-card" data-aos="flip-right">
+            <div class="stat-card">
                 <h3>Crop Production</h3>
                 <div class="chart-container">
                     <canvas id="cropEmissionsChart"></canvas>
@@ -228,7 +224,7 @@
             </div>
         </div>
     </section>
-    <section id="feedback-redirect" class="page-section" data-aos="fade-up">
+    <section id="feedback-redirect" class="page-section">
         <div class="feedback-redirect-container">
             <div class="feedback-content">
                 <h2><i class="fas fa-heart"></i> We Value Your Input</h2>
