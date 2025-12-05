@@ -29,9 +29,6 @@ header {
         min-height: 150px;
         padding: 0.8rem;
     }
-    header{
-        
-    }
 }
 
 @keyframes headerBgZoom {
@@ -91,12 +88,10 @@ footer {
     background: linear-gradient(45deg, #1a2a6c, #b21f1f);
     color: white;
     text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
+    padding: 2rem 1rem;
+    position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
-    margin: 20px 0;
+    margin-top: 20px;
 }
 
 .animated-img {
