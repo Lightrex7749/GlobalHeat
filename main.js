@@ -235,4 +235,209 @@ if (navigator.share && shareBtn) {
     });
 }
 
-console.log('✅ GlobalHeat initialized successfully');
+// ==================== READING PROGRESS BAR ====================
+const progressBar = document.createElement('div');
+progressBar.className = 'reading-progress';
+document.body.prepend(progressBar);
+
+window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+});
+
+// ==================== BACKGROUND PARTICLES ====================
+function createParticles() {
+    const particlesContainer = document.createElement('div');
+    particlesContainer.className = 'background-particles';
+    document.body.appendChild(particlesContainer);
+    
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 20 + 's';
+        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+        particlesContainer.appendChild(particle);
+    }
+}
+
+createParticles();
+
+// ==================== SCROLL REVEAL ANIMATIONS ====================
+const revealElements = document.querySelectorAll('.page-section, .stat-card, .cause-item');
+
+const revealOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-text', 'active');
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+revealElements.forEach(el => {
+    revealOnScroll.observe(el);
+});
+
+// ==================== ANIMATED COUNTERS ====================
+const counters = document.querySelectorAll('.counter');
+
+const animateCounter = (counter) => {
+    const target = counter.textContent;
+    const numericValue = parseFloat(target.replace(/[^0-9.]/g, ''));
+    
+    if (isNaN(numericValue)) return;
+    
+    const duration = 2000;
+    const steps = 60;
+    const stepValue = numericValue / steps;
+    let current = 0;
+    
+    const timer = setInterval(() => {
+        current += stepValue;
+        if (current >= numericValue) {
+            current = numericValue;
+            clearInterval(timer);
+        }
+        
+        const suffix = target.replace(/[0-9.]/g, '');
+        counter.textContent = current.toFixed(1) + suffix;
+    }, duration / steps);
+};
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+            animateCounter(entry.target);
+            entry.target.dataset.animated = 'true';
+        }
+    });
+}, { threshold: 0.5 });
+
+counters.forEach(counter => counterObserver.observe(counter));
+
+// ==================== RIPPLE EFFECT ====================
+document.querySelectorAll('button, .btn, .stat-card').forEach(element => {
+    element.classList.add('ripple');
+});
+
+// ==================== NOTIFICATION SYSTEM ====================
+function showNotification(message, duration = 5000) {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.innerHTML = `
+        <i class="fas fa-leaf" style="margin-right: 10px; color: var(--accent-color);"></i>
+        ${message}
+    `;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slide-out-right 0.5s ease';
+        setTimeout(() => notification.remove(), 500);
+    }, duration);
+}
+
+// Show welcome notification
+setTimeout(() => {
+    showNotification('🌍 Welcome to GlobalHeat! Let\'s fight climate change together.');
+}, 2000);
+
+// ==================== PARALLAX EFFECT ====================
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.animated-img');
+    
+    parallaxElements.forEach(el => {
+        const speed = 0.5;
+        el.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+});
+
+// ==================== ADD BADGES TO SECTIONS ====================
+setTimeout(() => {
+    const badges = [
+        { selector: '#home h2', text: 'NEW', class: 'badge-new' },
+        { selector: '#strategies h2', text: 'HOT', class: 'badge-hot' },
+        { selector: '#recycling h2', text: 'ECO', class: 'badge-eco' }
+    ];
+    
+    badges.forEach(badge => {
+        const element = document.querySelector(badge.selector);
+        if (element) {
+            const badgeEl = document.createElement('span');
+            badgeEl.className = `badge ${badge.class}`;
+            badgeEl.textContent = badge.text;
+            badgeEl.style.marginLeft = '15px';
+            badgeEl.style.fontSize = '0.5em';
+            badgeEl.style.verticalAlign = 'middle';
+            element.appendChild(badgeEl);
+        }
+    });
+}, 1000);
+
+// ==================== INTERACTIVE TOOLTIPS ====================
+document.querySelectorAll('.stat-card p').forEach(el => {
+    el.classList.add('tooltip');
+    el.setAttribute('data-tooltip', 'Click for more details');
+});
+
+// ==================== STAGGER ANIMATION FOR LISTS ====================
+document.querySelectorAll('.page-section ul li').forEach((li, index) => {
+    li.classList.add('stagger-item');
+    li.style.transitionDelay = `${index * 0.1}s`;
+});
+
+const listObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.stagger-item').forEach(item => {
+    listObserver.observe(item);
+});
+
+// ==================== DYNAMIC GLOW EFFECTS ====================
+setInterval(() => {
+    const glowElements = document.querySelectorAll('.counter');
+    glowElements.forEach(el => {
+        el.style.textShadow = `
+            0 0 ${Math.random() * 20 + 10}px var(--accent-color),
+            0 0 ${Math.random() * 40 + 20}px var(--accent-color)
+        `;
+    });
+}, 2000);
+
+// ==================== EASTER EGG: KONAMI CODE ====================
+let konamiCode = [];
+const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+
+document.addEventListener('keydown', (e) => {
+    konamiCode.push(e.key);
+    konamiCode = konamiCode.slice(-10);
+    
+    if (konamiCode.join('') === konamiSequence.join('')) {
+        document.body.style.animation = 'rainbow-bg 2s infinite';
+        showNotification('🎉 Easter Egg Activated! You found the secret!', 5000);
+    }
+});
+
+// ==================== PERFORMANCE MONITORING ====================
+if ('PerformanceObserver' in window) {
+    const perfObserver = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+            if (entry.duration > 100) {
+                console.warn(`Slow interaction detected: ${entry.name} took ${entry.duration}ms`);
+            }
+        }
+    });
+    
+    perfObserver.observe({ entryTypes: ['measure', 'navigation'] });
+}
+
+console.log('✅ GlobalHeat initialized successfully with advanced features!');
