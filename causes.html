@@ -278,7 +278,88 @@
             <p>© 2023 Global Warming Causes. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Interactive Sections -->
+    <section class="did-you-know-section">
+        <div class="container">
+            <h2>💡 Key Facts About Emissions</h2>
+            <div class="facts-carousel">
+                <div class="fact-slide active">
+                    <div class="fact-content">
+                        <span class="fact-emoji">🏭</span>
+                        <p>Industrial activities contribute 32% of global greenhouse gas emissions</p>
+                    </div>
+                </div>
+                <div class="fact-slide">
+                    <div class="fact-content">
+                        <span class="fact-emoji">🚗</span>
+                        <p>Transportation accounts for 28% of global CO₂ emissions, with cars being the largest contributor</p>
+                    </div>
+                </div>
+                <div class="fact-slide">
+                    <div class="fact-content">
+                        <span class="fact-emoji">🌳</span>
+                        <p>Deforestation releases 2.6 billion tons of CO₂ annually - equal to 13% of global emissions</p>
+                    </div>
+                </div>
+                <div class="fact-slide">
+                    <div class="fact-content">
+                        <span class="fact-emoji">🐄</span>
+                        <p>Agriculture produces 10% of emissions, with livestock generating significant methane</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="container">
+            <h2>📊 Emission Sources Breakdown</h2>
+            <div class="comparison-grid">
+                <div class="country-card">
+                    <div class="country-flag">🏭</div>
+                    <h3>Industry</h3>
+                    <div class="emission-bar" style="width: 100%;">
+                        <span>32% of Total</span>
+                    </div>
+                    <p class="per-capita">Fossil fuels, manufacturing</p>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag">🚗</div>
+                    <h3>Transportation</h3>
+                    <div class="emission-bar" style="width: 88%;">
+                        <span>28% of Total</span>
+                    </div>
+                    <p class="per-capita">Cars, planes, ships</p>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag">🌳</div>
+                    <h3>Deforestation</h3>
+                    <div class="emission-bar" style="width: 47%;">
+                        <span>15% of Total</span>
+                    </div>
+                    <p class="per-capita">Forest clearing, land use</p>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag">🐄</div>
+                    <h3>Agriculture</h3>
+                    <div class="emission-bar" style="width: 31%;">
+                        <span>10% of Total</span>
+                    </div>
+                    <p class="per-capita">Livestock, fertilizers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script src="main.js"></script>
+    <script src="data-features.js"></script>
     <script src="script.js"></script>
 </body>
 

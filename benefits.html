@@ -496,7 +496,153 @@ new Chart(costSavingsCtx, {
 
         // Add more chart initializations for other datasets
     </script>
+
+    <!-- Benefits Impact Calculator -->
+    <section class="calculator-section">
+        <div class="container">
+            <h2>💰 Calculate Your Green Savings</h2>
+            <div class="calculator-card">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label>💡 LED Bulbs Installed</label>
+                        <input type="number" id="ledBulbs" placeholder="20" value="20">
+                    </div>
+                    <div class="input-group">
+                        <label>☀️ Solar Panels (kW)</label>
+                        <input type="number" id="solarPower" placeholder="5" value="5">
+                    </div>
+                    <div class="input-group">
+                        <label>🌳 Trees Planted</label>
+                        <input type="number" id="treesPlanted" placeholder="10" value="10">
+                    </div>
+                    <div class="input-group">
+                        <label>🚗 EV Miles/Month</label>
+                        <input type="number" id="evMiles" placeholder="1000" value="1000">
+                    </div>
+                </div>
+                <button class="calculate-btn" onclick="calculateGreenBenefits()">Calculate Benefits</button>
+                <div class="result-display" id="benefitsResult" style="display: block;">
+                    <div class="result-number">0</div>
+                    <div class="result-label">Tons CO₂ Saved/Year</div>
+                    <div class="result-comparison"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-facts-section">
+        <div class="container">
+            <h2>🌱 Benefits Impact Data</h2>
+            <div class="facts-grid">
+                <div class="fact-box">
+                    <div class="fact-icon">💵</div>
+                    <div class="fact-number" data-target="2.5">0</div>
+                    <div class="fact-label">Trillion $ Green Economy</div>
+                    <div class="fact-trend">↑ Growing 25%/year</div>
+                </div>
+                <div class="fact-box">
+                    <div class="fact-icon">👥</div>
+                    <div class="fact-number" data-target="12">0</div>
+                    <div class="fact-label">Million Green Jobs Created</div>
+                    <div class="fact-trend">↑ Since 2015</div>
+                </div>
+                <div class="fact-box">
+                    <div class="fact-icon">🏥</div>
+                    <div class="fact-number" data-target="7">0</div>
+                    <div class="fact-label">Million Lives Saved/Year</div>
+                    <div class="fact-trend">↑ From clean air</div>
+                </div>
+                <div class="fact-box">
+                    <div class="fact-icon">💰</div>
+                    <div class="fact-number" data-target="180">0</div>
+                    <div class="fact-label">Billion $ Energy Savings</div>
+                    <div class="fact-trend">↑ From efficiency</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="did-you-know-section">
+        <div class="container">
+            <h2>💡 Climate Action Benefits</h2>
+            <div class="facts-carousel">
+                <div class="fact-slide active">
+                    <div class="fact-content">
+                        <span class="fact-emoji">💼</span>
+                        <p>The renewable energy sector employs 12 million people globally - more than fossil fuels</p>
+                    </div>
+                </div>
+                <div class="fact-slide">
+                    <div class="fact-content">
+                        <span class="fact-emoji">💰</span>
+                        <p>Energy-efficient buildings save owners $680 billion annually worldwide</p>
+                    </div>
+                </div>
+                <div class="fact-slide">
+                    <div class="fact-content">
+                        <span class="fact-emoji">🏥</span>
+                        <p>Cleaner air prevents 7 million premature deaths each year</p>
+                    </div>
+                </div>
+                <div class="fact-slide">
+                    <div class="fact-content">
+                        <span class="fact-emoji">🌊</span>
+                        <p>Ocean conservation supports 3 billion people who depend on marine biodiversity</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    // Green Benefits Calculator
+    function calculateGreenBenefits() {
+        const ledBulbs = parseFloat(document.getElementById('ledBulbs').value) || 0;
+        const solarPower = parseFloat(document.getElementById('solarPower').value) || 0;
+        const treesPlanted = parseFloat(document.getElementById('treesPlanted').value) || 0;
+        const evMiles = parseFloat(document.getElementById('evMiles').value) || 0;
+
+        // Calculate CO2 savings (in tons/year)
+        const ledSavings = (ledBulbs * 50 * 0.42) / 1000; // 50W saved per bulb * 0.42kg CO2/kWh
+        const solarSavings = (solarPower * 1825 * 0.42) / 1000; // kW * 5hrs/day * 365 days
+        const treeSavings = (treesPlanted * 21.7) / 1000; // 21.7 kg CO2 per tree per year
+        const evSavings = (evMiles * 12 * 0.404) / 1000; // vs gas car emissions
+
+        const totalSavings = ledSavings + solarSavings + treeSavings + evSavings;
+
+        const resultDiv = document.getElementById('benefitsResult');
+        const resultNumber = resultDiv.querySelector('.result-number');
+        const resultComparison = resultDiv.querySelector('.result-comparison');
+
+        animateValue(resultNumber, 0, totalSavings.toFixed(1), 1000);
+
+        const moneySaved = Math.round(totalSavings * 50); // $50 per ton CO2
+        const treesEquivalent = Math.round(totalSavings / 0.0217);
+        
+        resultComparison.innerHTML = `
+            <span style="color: #10b981;">💰 Saving ~$${moneySaved}/year in climate costs</span><br>
+            <small>Equivalent to ${treesEquivalent} trees planted | Preventing ${(totalSavings * 2.2).toFixed(1)} lbs pollution</small>
+        `;
+
+        resultDiv.style.display = 'block';
+    }
+
+    // Trigger initial calculation
+    document.addEventListener('DOMContentLoaded', () => {
+        if (document.getElementById('benefitsResult')) {
+            calculateGreenBenefits();
+        }
+    });
+    </script>
+
     <script src="main.js"></script>
+    <script src="data-features.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

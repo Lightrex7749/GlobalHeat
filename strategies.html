@@ -370,7 +370,141 @@
 
         // Add more chart initializations for other datasets
     </script>
+
+    <!-- Interactive Action Checklist -->
+    <section class="action-section">
+        <div class="container">
+            <h2>✅ Your Climate Strategy Checklist</h2>
+            <div class="checklist-grid">
+                <div class="checklist-category">
+                    <h3>☀️ Renewable Energy</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Install solar panels<small>Generate 10kW/day clean energy</small></span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Switch to green energy provider<small>Cut grid emissions 100%</small></span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Use solar water heater<small>Save 1.5 tons CO₂/year</small></span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Install LED lighting throughout<small>75% energy reduction</small></span>
+                    </label>
+                </div>
+                
+                <div class="checklist-category">
+                    <h3>⚡ Energy Efficiency</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Upgrade to Energy Star appliances<small>50% more efficient</small></span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Improve home insulation<small>30% heating savings</small></span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Install smart thermostat<small>Save $180/year</small></span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Seal air leaks and drafts<small>20% efficiency gain</small></span>
+                    </label>
+                </div>
+                
+                <div class="checklist-category">
+                    <h3>🚌 Sustainable Transport</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Use public transportation<small>4.6 tons CO₂ saved/year</small></span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Bike or walk for errands<small>Zero emissions travel</small></span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Join carpool program<small>50% emission reduction</small></span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Consider EV for next car<small>60-90% less emissions</small></span>
+                    </label>
+                </div>
+                
+                <div class="checklist-category">
+                    <h3>🔬 Smart Tech</h3>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Use power strips to eliminate standby<small>Save 100W constantly</small></span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Install motion sensor lights<small>40% lighting savings</small></span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Monitor energy with smart meter<small>Track real-time usage</small></span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span>Automate heating/cooling schedule<small>25% HVAC savings</small></span>
+                    </label>
+                </div>
+            </div>
+            <div class="progress-tracker">
+                <div class="progress-text">Your Progress: <span id="checklistProgress">0%</span></div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="did-you-know-section">
+        <div class="container">
+            <h2>💡 Strategy Success Stories</h2>
+            <div class="facts-carousel">
+                <div class="fact-slide active">
+                    <div class="fact-content">
+                        <span class="fact-emoji">☀️</span>
+                        <p>Solar power costs dropped 89% in the last decade, making it the cheapest energy source</p>
+                    </div>
+                </div>
+                <div class="fact-slide">
+                    <div class="fact-content">
+                        <span class="fact-emoji">🌬️</span>
+                        <p>Wind energy now powers over 430 million homes worldwide</p>
+                    </div>
+                </div>
+                <div class="fact-slide">
+                    <div class="fact-content">
+                        <span class="fact-emoji">🔋</span>
+                        <p>Battery storage costs fell 97% since 1991, enabling 24/7 renewable energy</p>
+                    </div>
+                </div>
+                <div class="fact-slide">
+                    <div class="fact-content">
+                        <span class="fact-emoji">🚗</span>
+                        <p>Norway achieved 54% EV market share - proving sustainable transport works</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
     <script src="main.js"></script>
+    <script src="data-features.js"></script>
     <script src="script.js"></script>
 </body>
 
