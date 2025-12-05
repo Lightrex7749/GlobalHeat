@@ -31,6 +31,13 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
     position: relative;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Animated Background Particles */
@@ -133,12 +140,12 @@ header {
     color: white;
     padding: 1.2rem 2rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 60px rgba(59, 130, 246, 0.15);
-    animation: headerBgZoom 10s infinite alternate;
     position: sticky;
     top: 0;
     z-index: 100;
     border-bottom: 2px solid rgba(59, 130, 246, 0.3);
     backdrop-filter: blur(10px);
+    will-change: transform;
 }
 
 header::before {
@@ -759,7 +766,7 @@ nav ul.nav-menu li a:active {
 }
 
 footer {
-    background: linear-gradient(45deg, #1a2a6c, #b21f1f);
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     color: white;
     text-align: center;
     padding: 3rem 1rem 2rem;
@@ -767,6 +774,7 @@ footer {
     width: 100%;
     margin-top: 60px;
     overflow: hidden;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
 }
 
 footer::before {
@@ -2619,5 +2627,92 @@ canvas {
     .timeline-chart {
         padding: 20px;
         height: 400px;
+    }
+}/* Performance & Visibility Optimizations - Appended */
+
+/* Smooth scrolling fix */
+* {
+    scroll-behavior: smooth;
+}
+
+/* Disable float animation for images to reduce lag */
+.animated-img {
+    animation: none !important;
+}
+
+/* Better text visibility */
+.stat-card h3 {
+    color: #1a2a6c !important;
+    font-weight: 700 !important;
+}
+
+body.dark-mode .stat-card h3 {
+    color: #ffffff !important;
+}
+
+.stat-card p {
+    color: #2c3e50 !important;
+    font-weight: 500 !important;
+}
+
+body.dark-mode .stat-card p {
+    color: #e8e8e8 !important;
+}
+
+.stat-card ul li {
+    color: #34495e !important;
+    font-weight: 500 !important;
+}
+
+body.dark-mode .stat-card ul li {
+    color: #d0d0d0 !important;
+}
+
+/* Improve navbar on all pages */
+nav ul.nav-menu {
+    list-style: none !important;
+}
+
+nav ul.nav-menu li a {
+    color: white !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+}
+
+/* Better footer styling */
+footer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+}
+
+body.dark-mode footer {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d3561 50%, #0f0c29 100%) !important;
+}
+
+footer h3 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+footer p, footer li, footer a {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+footer a:hover {
+    color: #fdbb2d !important;
+}
+
+.footer-section {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+/* Optimize animations for performance */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
     }
 }
