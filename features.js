@@ -101,6 +101,7 @@ async function fetchClimateData() {
     try {
         // Using Open-Meteo API (free, no key required)
         const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=28.6139&longitude=77.2090&current_weather=true');
+        if (!response.ok) throw new Error('API Error');
         const data = await response.json();
         
         climateDataEl.innerHTML = `
@@ -116,7 +117,19 @@ async function fetchClimateData() {
             </div>
         `;
     } catch (error) {
-        console.log('Climate data fetch failed:', error);
+        // Fallback to static data
+        climateDataEl.innerHTML = `
+            <div class="climate-stat">
+                <i class="fas fa-temperature-high"></i>
+                <span class="stat-value">28°C</span>
+                <span class="stat-label">Avg Global Temp Rise</span>
+            </div>
+            <div class="climate-stat">
+                <i class="fas fa-thermometer-half"></i>
+                <span class="stat-value">+1.1°C</span>
+                <span class="stat-label">Since Pre-industrial</span>
+            </div>
+        `;
     }
 }
 
@@ -185,16 +198,20 @@ let quizScore = 0;
 let quizActive = false;
 
 function startQuiz() {
+    const quizModal = document.getElementById('quizModal');
+    if (!quizModal) return;
+    
     currentQuestion = 0;
     quizScore = 0;
     quizActive = true;
     showQuestion();
-    document.getElementById('quizModal').classList.add('visible');
+    quizModal.classList.add('visible');
 }
 
 function showQuestion() {
     const q = quizQuestions[currentQuestion];
     const quizContent = document.getElementById('quizContent');
+    if (!quizContent) return;
     
     quizContent.innerHTML = `
         <div class="quiz-progress">Question ${currentQuestion + 1} of ${quizQuestions.length}</div>
@@ -238,6 +255,7 @@ function selectAnswer(index) {
 function showQuizResults() {
     const percentage = Math.round((quizScore / quizQuestions.length) * 100);
     const quizContent = document.getElementById('quizContent');
+    if (!quizContent) return;
     
     let badge = '🌱';
     let title = 'Climate Learner';
@@ -262,7 +280,8 @@ function showQuizResults() {
 }
 
 function closeQuiz() {
-    document.getElementById('quizModal').classList.remove('visible');
+    const quizModal = document.getElementById('quizModal');
+    if (quizModal) quizModal.classList.remove('visible');
     quizActive = false;
 }
 
@@ -362,6 +381,7 @@ function showAchievements() {
     const earned = JSON.parse(localStorage.getItem('achievements') || '[]');
     const modal = document.getElementById('achievementsModal');
     const content = document.getElementById('achievementsContent');
+    if (!modal || !content) return;
     
     content.innerHTML = Object.entries(achievements).map(([id, ach]) => `
         <div class="achievement-badge ${earned.includes(id) ? 'earned' : 'locked'}">
@@ -378,6 +398,8 @@ function showAchievements() {
 function generateQRCode() {
     const modal = document.getElementById('qrModal');
     const qrContainer = document.getElementById('qrCode');
+    if (!modal || !qrContainer) return;
+    
     const url = window.location.href;
     
     // Using QR Server API (free)
