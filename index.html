@@ -24,7 +24,51 @@
     
     <title>Global Heat: A Critical Global Issue</title>
     <link rel="icon" type="image/x-icon" href="assect/images/planet-earth.png">
-    <link rel="stylesheet" href="styles.css">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assect/images/planet-earth.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="assect/images/navbar2.jpg" as="image">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "GlobalHeat - Climate Change Awareness",
+        "url": "https://lightrex7749.github.io/GlobalHeat",
+        "description": "Interactive educational platform exploring global warming causes, solutions, and climate action strategies.",
+        "author": {
+            "@type": "Person",
+            "name": "Lightrex7749"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "GlobalHeat",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://lightrex7749.github.io/GlobalHeat/assect/images/planet-earth.png"
+            }
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://lightrex7749.github.io/GlobalHeat/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
 </head>
 
 <body>
@@ -668,10 +712,96 @@
         </div>
     </div>
     
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-content">
+            <i class="fas fa-cookie-bite cookie-icon"></i>
+            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+            <div class="cookie-buttons">
+                <button id="acceptCookies" class="cookie-btn accept">Accept</button>
+                <button id="declineCookies" class="cookie-btn decline">Decline</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Newsletter Signup Modal -->
+    <div id="newsletterModal" class="newsletter-modal">
+        <div class="newsletter-content">
+            <button class="newsletter-close" aria-label="Close newsletter">&times;</button>
+            <i class="fas fa-envelope-open-text newsletter-icon"></i>
+            <h3>Stay Updated on Climate Action!</h3>
+            <p>Subscribe to our newsletter for the latest environmental news and tips.</p>
+            <form id="newsletterForm" class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+            </form>
+        </div>
+    </div>
+    
     <script src="youtube-optimizer.js"></script>
     <script src="main.js"></script>
     <script src="data-features.js"></script>
     <script src="scripts.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('SW registered'))
+                    .catch(err => console.log('SW registration failed'));
+            });
+        }
+        
+        // Back to Top functionality
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Cookie Consent
+        const cookieConsent = document.getElementById('cookieConsent');
+        if (!localStorage.getItem('cookieConsent')) {
+            setTimeout(() => cookieConsent.classList.add('visible'), 2000);
+        }
+        document.getElementById('acceptCookies').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieConsent.classList.remove('visible');
+        });
+        document.getElementById('declineCookies').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieConsent.classList.remove('visible');
+        });
+        
+        // Newsletter Modal
+        const newsletterModal = document.getElementById('newsletterModal');
+        if (!localStorage.getItem('newsletterShown')) {
+            setTimeout(() => {
+                newsletterModal.classList.add('visible');
+                localStorage.setItem('newsletterShown', 'true');
+            }, 30000); // Show after 30 seconds
+        }
+        document.querySelector('.newsletter-close').addEventListener('click', () => {
+            newsletterModal.classList.remove('visible');
+        });
+        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for subscribing! 🌍');
+            newsletterModal.classList.remove('visible');
+        });
+    </script>
 
 </body>
 

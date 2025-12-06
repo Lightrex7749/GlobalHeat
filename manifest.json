@@ -1,0 +1,27 @@
+{
+  "name": "GlobalHeat - Climate Change Awareness",
+  "short_name": "GlobalHeat",
+  "description": "Interactive educational platform exploring global warming causes, solutions, and climate action strategies.",
+  "start_url": "/GlobalHeat/",
+  "display": "standalone",
+  "background_color": "#1a2a6c",
+  "theme_color": "#1a2a6c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assect/images/planet-earth.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assect/images/planet-earth.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "environment"],
+  "lang": "en",
+  "dir": "ltr"
+}

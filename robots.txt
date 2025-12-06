@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lightrex7749.github.io/GlobalHeat/sitemap.xml
