@@ -3271,17 +3271,17 @@ body.dark-mode .theme-customizer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.8);
-    display: flex;
+    background: rgba(0,0,0,0.85);
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: 10001;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s;
 }
 
 .quiz-modal.visible, .modal.visible {
+    display: flex;
     opacity: 1;
     visibility: visible;
 }
@@ -3609,18 +3609,14 @@ body.reading-mode .stat-card {
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.95);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: 10002;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
 }
 
 #lightbox.visible {
-    opacity: 1;
-    visibility: visible;
+    display: flex;
 }
 
 #lightboxImg {
