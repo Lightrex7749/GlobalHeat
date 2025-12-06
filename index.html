@@ -725,6 +725,11 @@
         </div>
     </footer>
     
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
     <!-- Share Buttons -->
     <div class="share-container">
         <button class="share-btn" aria-label="Share this page" title="Share">
@@ -746,52 +751,12 @@
         </div>
     </div>
     
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to Top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-    
-    <!-- Cookie Consent Banner -->
-    <div id="cookieConsent" class="cookie-consent">
-        <div class="cookie-content">
-            <i class="fas fa-cookie-bite cookie-icon"></i>
-            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
-            <div class="cookie-buttons">
-                <button id="acceptCookies" class="cookie-btn accept">Accept</button>
-                <button id="declineCookies" class="cookie-btn decline">Decline</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Newsletter Signup Modal -->
-    <div id="newsletterModal" class="newsletter-modal">
-        <div class="newsletter-content">
-            <button class="newsletter-close" aria-label="Close newsletter">&times;</button>
-            <i class="fas fa-envelope-open-text newsletter-icon"></i>
-            <h3>Stay Updated on Climate Action!</h3>
-            <p>Subscribe to our newsletter for the latest environmental news and tips.</p>
-            <form id="newsletterForm" class="newsletter-form">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
-            </form>
-        </div>
-    </div>
-    
     <script src="youtube-optimizer.js"></script>
     <script src="main.js"></script>
     <script src="data-features.js"></script>
     <script src="scripts.js"></script>
     
-    <!-- Service Worker Registration -->
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then(reg => console.log('SW registered'))
-                    .catch(err => console.log('SW registration failed'));
-            });
-        }
-        
         // Back to Top functionality
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
@@ -803,143 +768,6 @@
         });
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        // Cookie Consent
-        const cookieConsent = document.getElementById('cookieConsent');
-        if (!localStorage.getItem('cookieConsent')) {
-            setTimeout(() => cookieConsent.classList.add('visible'), 2000);
-        }
-        document.getElementById('acceptCookies').addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'accepted');
-            cookieConsent.classList.remove('visible');
-        });
-        document.getElementById('declineCookies').addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'declined');
-            cookieConsent.classList.remove('visible');
-        });
-        
-        // Newsletter Modal
-        const newsletterModal = document.getElementById('newsletterModal');
-        if (!localStorage.getItem('newsletterShown')) {
-            setTimeout(() => {
-                newsletterModal.classList.add('visible');
-                localStorage.setItem('newsletterShown', 'true');
-            }, 30000); // Show after 30 seconds
-        }
-        document.querySelector('.newsletter-close').addEventListener('click', () => {
-            newsletterModal.classList.remove('visible');
-        });
-        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for subscribing! 🌍');
-            newsletterModal.classList.remove('visible');
-        });
-    </script>
-    
-    <!-- Quiz Modal -->
-    <div id="quizModal" class="quiz-modal">
-        <div class="quiz-container">
-            <button class="newsletter-close" onclick="closeQuiz()">&times;</button>
-            <h2>🌍 Climate Quiz</h2>
-            <div id="quizContent"></div>
-        </div>
-    </div>
-    
-    <!-- Achievements Modal -->
-    <div id="achievementsModal" class="modal">
-        <div class="quiz-container">
-            <button class="newsletter-close" onclick="this.closest('.modal').classList.remove('visible')">&times;</button>
-            <h2>🏆 Your Achievements</h2>
-            <div id="achievementsContent" class="achievements-grid"></div>
-        </div>
-    </div>
-    
-    <!-- QR Code Modal -->
-    <div id="qrModal" class="modal">
-        <div class="quiz-container">
-            <button class="newsletter-close" onclick="this.closest('.modal').classList.remove('visible')">&times;</button>
-            <h2>📱 Share via QR Code</h2>
-            <div id="qrCode"></div>
-        </div>
-    </div>
-    
-    <!-- Keyboard Shortcuts Modal -->
-    <div id="shortcutsModal" class="modal">
-        <div class="quiz-container">
-            <button class="newsletter-close" onclick="this.closest('.modal').classList.remove('visible')">&times;</button>
-            <h2>⌨️ Keyboard Shortcuts</h2>
-            <div class="shortcuts-grid">
-                <div class="shortcut-item"><span class="shortcut-key">H</span> Go to Home</div>
-                <div class="shortcut-item"><span class="shortcut-key">D</span> Toggle Dark Mode</div>
-                <div class="shortcut-item"><span class="shortcut-key">R</span> Reading Mode</div>
-                <div class="shortcut-item"><span class="shortcut-key">T</span> Back to Top</div>
-                <div class="shortcut-item"><span class="shortcut-key">Q</span> Start Quiz</div>
-                <div class="shortcut-item"><span class="shortcut-key">S</span> Text-to-Speech</div>
-                <div class="shortcut-item"><span class="shortcut-key">?</span> Show Shortcuts</div>
-                <div class="shortcut-item"><span class="shortcut-key">Esc</span> Close Modals</div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Lightbox -->
-    <div id="lightbox">
-        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-        <img id="lightboxImg" src="" alt="">
-    </div>
-    
-    <!-- Table of Contents -->
-    <div id="tableOfContents"></div>
-    
-    <!-- Text-to-Speech Button -->
-    <button id="ttsBtn" onclick="toggleTTS()" title="Listen to Article">
-        <i class="fas fa-volume-up"></i>
-    </button>
-    
-    <!-- Floating Action Buttons -->
-    <div class="fab-container">
-        <button class="fab-btn fab-quiz" onclick="startQuiz()" title="Take Climate Quiz">
-            <i class="fas fa-question"></i>
-        </button>
-        <button class="fab-btn fab-achievements" onclick="showAchievements()" title="View Achievements">
-            <i class="fas fa-trophy"></i>
-        </button>
-        <button class="fab-btn fab-qr" onclick="generateQRCode()" title="Generate QR Code">
-            <i class="fas fa-qrcode"></i>
-        </button>
-        <button class="fab-btn fab-reading" onclick="toggleReadingMode()" title="Reading Mode">
-            <i class="fas fa-book-reader"></i>
-        </button>
-    </div>
-    
-    <!-- Theme Customizer -->
-    <div class="theme-customizer" id="themeCustomizer">
-        <button class="theme-customizer-toggle" id="themeToggleBtn" title="Customize Theme">
-            <i class="fas fa-palette"></i>
-        </button>
-        <h4>🎨 Theme Colors</h4>
-        <div class="theme-colors">
-            <button class="theme-color-btn" style="background: linear-gradient(135deg, #667eea, #764ba2)" onclick="setThemeColor('default')" title="Default"></button>
-            <button class="theme-color-btn" style="background: linear-gradient(135deg, #0077b6, #00b4d8)" onclick="setThemeColor('ocean')" title="Ocean"></button>
-            <button class="theme-color-btn" style="background: linear-gradient(135deg, #2d6a4f, #40916c)" onclick="setThemeColor('forest')" title="Forest"></button>
-            <button class="theme-color-btn" style="background: linear-gradient(135deg, #f77f00, #d62828)" onclick="setThemeColor('sunset')" title="Sunset"></button>
-            <button class="theme-color-btn" style="background: linear-gradient(135deg, #7209b7, #b5179e)" onclick="setThemeColor('lavender')" title="Lavender"></button>
-            <button class="theme-color-btn" style="background: linear-gradient(135deg, #06d6a0, #118ab2)" onclick="setThemeColor('mint')" title="Mint"></button>
-        </div>
-        <h4 style="margin-top:20px">🌐 Language</h4>
-        <div class="language-toggle">
-            <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
-            <button class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
-        </div>
-    </div>
-    
-    <!-- Load Advanced Features -->
-    <script src="features.js"></script>
-    
-    <script>
-        // Theme customizer toggle
-        document.getElementById('themeToggleBtn')?.addEventListener('click', function() {
-            document.getElementById('themeCustomizer').classList.toggle('visible');
         });
     </script>
 
