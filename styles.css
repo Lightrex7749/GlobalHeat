@@ -9,6 +9,16 @@
     --header-overlay: rgba(0, 0, 0, 0.6);
     --shadow: rgba(0, 0, 0, 0.1);
     --accent-color: #fdbb2d;
+    /* Touch-friendly sizing */
+    --touch-target-size: 44px;
+    --spacing-mobile: 16px;
+}
+
+/* Mobile-first performance optimizations */
+@media (max-width: 768px) {
+    :root {
+        --spacing-mobile: 12px;
+    }
 }
 
 body.dark-mode {
@@ -20,6 +30,16 @@ body.dark-mode {
     --card-alt-bg: rgba(40, 40, 56, 0.95);
     --header-overlay: rgba(0, 0, 0, 0.8);
     --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth scrolling with reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 body {
@@ -34,6 +54,11 @@ body {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Prevent text size adjustment on orientation change */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Better tap highlighting */
+    -webkit-tap-highlight-color: rgba(102, 126, 234, 0.3);
 }
 
 html {
@@ -3848,6 +3873,36 @@ body.dark-mode .shortcut-key {
     .theme-colors {
         grid-template-columns: repeat(6, 1fr);
     }
+    
+    /* Mobile typography */
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    
+    /* Mobile cards */
+    .info-card, .cause-item, .benefit-card, .strategy-item {
+        padding: 20px;
+        margin: 10px 0;
+    }
+    
+    /* Touch-friendly buttons */
+    button, .btn, a.btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Better form inputs on mobile */
+    input, textarea, select {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+        padding: 12px;
+    }
+    
+    /* Modal improvements */
+    .modal-content, .quiz-container, .achievements-container {
+        margin: 10px;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
 }
 
 @media (max-width: 480px) {
@@ -3861,6 +3916,107 @@ body.dark-mode .shortcut-key {
     
     .co2-value {
         font-size: 1.8rem;
+    }
+    
+    /* Extra small screens */
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.3rem; }
+    
+    section {
+        padding: 30px 15px;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* Stack buttons horizontally on very small screens */
+    .fab-container {
+        flex-direction: row;
+        bottom: 10px;
+        left: 10px;
+    }
+    
+    .fab-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+    
+    #ttsBtn, .share-btn, .back-to-top {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .share-container {
+        bottom: 100px;
+    }
+    
+    #ttsBtn {
+        bottom: 55px;
+    }
+}
+
+/* Landscape phone optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+    header {
+        min-height: 100px;
+        padding: 0.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    nav ul.nav-menu {
+        padding-top: 50px;
+    }
+    
+    .modal-content {
+        max-height: 90vh;
+    }
+}
+
+/* Safe area insets for notched phones */
+@supports (padding: max(0px)) {
+    body {
+        padding-left: max(0px, env(safe-area-inset-left));
+        padding-right: max(0px, env(safe-area-inset-right));
+    }
+    
+    .fab-container {
+        bottom: max(20px, env(safe-area-inset-bottom));
+        left: max(20px, env(safe-area-inset-left));
+    }
+    
+    .back-to-top, #ttsBtn, .share-container {
+        right: max(20px, env(safe-area-inset-right));
+    }
+    
+    .back-to-top {
+        bottom: max(20px, env(safe-area-inset-bottom));
+    }
+    
+    footer {
+        padding-bottom: max(30px, env(safe-area-inset-bottom));
+    }
+}
+
+/* Print styles */
+@media print {
+    .fab-container, .back-to-top, #ttsBtn, .share-container,
+    .theme-customizer, .cookie-consent, nav, .mobile-menu-toggle {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    a {
+        color: black !important;
+        text-decoration: underline;
     }
 }
 
