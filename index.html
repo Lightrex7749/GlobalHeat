@@ -126,6 +126,34 @@
     <!-- Sections -->
     <section id="home" class="page-section">
         <h2><span class="wave-text">🌍</span> Introduction</h2>
+        
+        <!-- Live Climate Data Widget -->
+        <div class="live-climate-widget">
+            <div id="liveClimateData">
+                <div class="climate-stat">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span class="stat-label">Loading climate data...</span>
+                </div>
+            </div>
+            <div id="co2Data">
+                <div class="co2-display">
+                    <i class="fas fa-cloud"></i>
+                    <span class="co2-value">421.5 ppm</span>
+                    <span class="co2-label">Atmospheric CO₂</span>
+                </div>
+            </div>
+            <div class="visitor-counter">
+                <i class="fas fa-users"></i>
+                <span>Visitors: <strong id="visitorCount">0</strong></span>
+            </div>
+        </div>
+        
+        <!-- Upcoming Climate Events -->
+        <div class="events-widget">
+            <h3 style="color:white; margin-bottom:15px;">📅 Upcoming Climate Events</h3>
+            <div id="climateEvents"></div>
+        </div>
+        
         <p class="glow-text" style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Global warming, driven by human activities, is one of the most significant environmental challenges...</p>
         <p>Global warming, driven by human activities, is one of the most significant environmental challenges facing
             our planet today. Here are key aspects to understand:</p>
@@ -802,6 +830,105 @@
             newsletterModal.classList.remove('visible');
         });
     </script>
+    
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="quiz-modal">
+        <div class="quiz-container">
+            <button class="newsletter-close" onclick="closeQuiz()">&times;</button>
+            <h2>🌍 Climate Quiz</h2>
+            <div id="quizContent"></div>
+        </div>
+    </div>
+    
+    <!-- Achievements Modal -->
+    <div id="achievementsModal" class="modal">
+        <div class="quiz-container">
+            <button class="newsletter-close" onclick="this.closest('.modal').classList.remove('visible')">&times;</button>
+            <h2>🏆 Your Achievements</h2>
+            <div id="achievementsContent" class="achievements-grid"></div>
+        </div>
+    </div>
+    
+    <!-- QR Code Modal -->
+    <div id="qrModal" class="modal">
+        <div class="quiz-container">
+            <button class="newsletter-close" onclick="this.closest('.modal').classList.remove('visible')">&times;</button>
+            <h2>📱 Share via QR Code</h2>
+            <div id="qrCode"></div>
+        </div>
+    </div>
+    
+    <!-- Keyboard Shortcuts Modal -->
+    <div id="shortcutsModal" class="modal">
+        <div class="quiz-container">
+            <button class="newsletter-close" onclick="this.closest('.modal').classList.remove('visible')">&times;</button>
+            <h2>⌨️ Keyboard Shortcuts</h2>
+            <div class="shortcuts-grid">
+                <div class="shortcut-item"><span class="shortcut-key">H</span> Go to Home</div>
+                <div class="shortcut-item"><span class="shortcut-key">D</span> Toggle Dark Mode</div>
+                <div class="shortcut-item"><span class="shortcut-key">R</span> Reading Mode</div>
+                <div class="shortcut-item"><span class="shortcut-key">T</span> Back to Top</div>
+                <div class="shortcut-item"><span class="shortcut-key">Q</span> Start Quiz</div>
+                <div class="shortcut-item"><span class="shortcut-key">S</span> Text-to-Speech</div>
+                <div class="shortcut-item"><span class="shortcut-key">?</span> Show Shortcuts</div>
+                <div class="shortcut-item"><span class="shortcut-key">Esc</span> Close Modals</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+    
+    <!-- Table of Contents -->
+    <div id="tableOfContents"></div>
+    
+    <!-- Text-to-Speech Button -->
+    <button id="ttsBtn" onclick="toggleTTS()" title="Listen to Article">
+        <i class="fas fa-volume-up"></i>
+    </button>
+    
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <button class="fab-btn fab-quiz" onclick="startQuiz()" title="Take Climate Quiz">
+            <i class="fas fa-question"></i>
+        </button>
+        <button class="fab-btn fab-achievements" onclick="showAchievements()" title="View Achievements">
+            <i class="fas fa-trophy"></i>
+        </button>
+        <button class="fab-btn fab-qr" onclick="generateQRCode()" title="Generate QR Code">
+            <i class="fas fa-qrcode"></i>
+        </button>
+        <button class="fab-btn fab-reading" onclick="toggleReadingMode()" title="Reading Mode">
+            <i class="fas fa-book-reader"></i>
+        </button>
+    </div>
+    
+    <!-- Theme Customizer -->
+    <div class="theme-customizer" id="themeCustomizer">
+        <button class="theme-customizer-toggle" onclick="document.getElementById('themeCustomizer').classList.toggle('visible')">
+            <i class="fas fa-palette"></i>
+        </button>
+        <h4>🎨 Theme Colors</h4>
+        <div class="theme-colors">
+            <button class="theme-color-btn" style="background: linear-gradient(135deg, #667eea, #764ba2)" onclick="setThemeColor('default')" title="Default"></button>
+            <button class="theme-color-btn" style="background: linear-gradient(135deg, #0077b6, #00b4d8)" onclick="setThemeColor('ocean')" title="Ocean"></button>
+            <button class="theme-color-btn" style="background: linear-gradient(135deg, #2d6a4f, #40916c)" onclick="setThemeColor('forest')" title="Forest"></button>
+            <button class="theme-color-btn" style="background: linear-gradient(135deg, #f77f00, #d62828)" onclick="setThemeColor('sunset')" title="Sunset"></button>
+            <button class="theme-color-btn" style="background: linear-gradient(135deg, #7209b7, #b5179e)" onclick="setThemeColor('lavender')" title="Lavender"></button>
+            <button class="theme-color-btn" style="background: linear-gradient(135deg, #06d6a0, #118ab2)" onclick="setThemeColor('mint')" title="Mint"></button>
+        </div>
+        <h4 style="margin-top:20px">🌐 Language</h4>
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
+        </div>
+    </div>
+    
+    <!-- Load Advanced Features -->
+    <script src="features.js"></script>
 
 </body>
 

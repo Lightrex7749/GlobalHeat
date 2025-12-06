@@ -3030,3 +3030,648 @@ body.dark-mode .page-section li {
     }
 }
 
+/* ==================== LANGUAGE TOGGLE ==================== */
+.language-toggle {
+    display: flex;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.lang-btn {
+    padding: 5px 10px;
+    border: 2px solid rgba(255,255,255,0.3);
+    background: transparent;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.lang-btn.active, .lang-btn:hover {
+    background: white;
+    color: #1a2a6c;
+}
+
+/* ==================== THEME CUSTOMIZER ==================== */
+.theme-customizer {
+    position: fixed;
+    top: 50%;
+    left: -250px;
+    transform: translateY(-50%);
+    width: 250px;
+    background: var(--card-bg);
+    border-radius: 0 15px 15px 0;
+    padding: 20px;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.2);
+    z-index: 9998;
+    transition: left 0.3s ease;
+}
+
+.theme-customizer.visible {
+    left: 0;
+}
+
+.theme-customizer-toggle {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--theme-primary, #667eea);
+    border: none;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    cursor: pointer;
+}
+
+.theme-colors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.theme-color-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.theme-color-btn:hover, .theme-color-btn.active {
+    transform: scale(1.1);
+    border-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* ==================== LIVE CLIMATE DATA ==================== */
+.live-climate-widget {
+    background: linear-gradient(135deg, #1a2a6c 0%, #2d3561 100%);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.climate-stat {
+    text-align: center;
+    color: white;
+}
+
+.climate-stat i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #f59e0b;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.co2-display {
+    text-align: center;
+    color: white;
+}
+
+.co2-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #10b981;
+}
+
+/* ==================== QUIZ MODAL ==================== */
+.quiz-modal, .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.quiz-modal.visible, .modal.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.quiz-container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+body.dark-mode .quiz-container {
+    background: #1e1e2f;
+}
+
+.quiz-progress {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.quiz-question {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+body.dark-mode .quiz-question {
+    color: #fff;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.quiz-option {
+    padding: 15px 25px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    color: #333;
+}
+
+body.dark-mode .quiz-option {
+    border-color: #3a3a5a;
+    color: #fff;
+}
+
+.quiz-option:hover:not(:disabled) {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.quiz-option.correct {
+    background: #10b981 !important;
+    border-color: #10b981 !important;
+    color: white !important;
+}
+
+.quiz-option.wrong {
+    background: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+.quiz-results {
+    text-align: center;
+}
+
+.result-badge {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.result-bar {
+    width: 100%;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.result-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #3b82f6);
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+.quiz-restart, .quiz-close {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 5px;
+    transition: all 0.3s;
+}
+
+.quiz-restart {
+    background: #667eea;
+    color: white;
+}
+
+.quiz-close {
+    background: transparent;
+    border: 2px solid #667eea;
+    color: #667eea;
+}
+
+/* ==================== ACHIEVEMENT BADGES ==================== */
+.achievement-notification {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+    z-index: 10002;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.achievement-notification.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.achievement-icon {
+    font-size: 2rem;
+}
+
+.achievement-text strong {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.achievement-badge {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(102, 126, 234, 0.1);
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.achievement-badge.earned {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.achievement-badge.locked {
+    opacity: 0.5;
+    filter: grayscale(1);
+}
+
+.badge-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.badge-name {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.badge-desc {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* ==================== QR CODE MODAL ==================== */
+#qrCode {
+    text-align: center;
+    padding: 30px;
+}
+
+#qrCode img {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ==================== READING MODE ==================== */
+body.reading-mode {
+    background: #fefefe !important;
+}
+
+body.reading-mode header,
+body.reading-mode footer,
+body.reading-mode .share-container,
+body.reading-mode .back-to-top,
+body.reading-mode .theme-customizer,
+body.reading-mode nav {
+    display: none !important;
+}
+
+body.reading-mode .page-section {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+body.reading-mode .stat-card {
+    max-width: 100%;
+}
+
+/* ==================== TABLE OF CONTENTS ==================== */
+#tableOfContents {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+    max-width: 200px;
+    transition: all 0.3s;
+}
+
+#tableOfContents.collapsed .toc-list {
+    display: none;
+}
+
+.toc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.toc-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-list li {
+    margin: 8px 0;
+}
+
+.toc-list a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.toc-list a:hover {
+    color: var(--theme-primary, #667eea);
+}
+
+/* ==================== TEXT-TO-SPEECH BUTTON ==================== */
+#ttsBtn {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    z-index: 9997;
+    transition: all 0.3s;
+}
+
+#ttsBtn.active {
+    background: #ef4444;
+}
+
+#ttsBtn:hover {
+    transform: translateY(-3px);
+}
+
+/* ==================== LIGHTBOX ==================== */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10002;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+#lightbox.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#lightboxImg {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.lightbox-close:hover {
+    transform: scale(1.2);
+}
+
+/* ==================== CLIMATE EVENTS ==================== */
+.events-widget {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.event-icon {
+    font-size: 1.5rem;
+}
+
+.event-name {
+    display: block;
+    font-weight: 600;
+}
+
+.event-date {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* ==================== KEYBOARD SHORTCUTS MODAL ==================== */
+.shortcuts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.shortcut-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.shortcut-key {
+    background: #e0e0e0;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-weight: 600;
+    min-width: 40px;
+    text-align: center;
+}
+
+body.dark-mode .shortcut-key {
+    background: #3a3a5a;
+}
+
+/* ==================== FLOATING ACTION BUTTONS ==================== */
+.fab-container {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9996;
+}
+
+.fab-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+.fab-btn:hover {
+    transform: scale(1.1);
+}
+
+.fab-quiz { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.fab-achievements { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+.fab-qr { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.fab-reading { background: linear-gradient(135deg, #10b981, #059669); }
+
+/* ==================== VISITOR COUNTER ==================== */
+.visitor-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.visitor-counter i {
+    color: #667eea;
+}
+
+/* ==================== MOBILE RESPONSIVENESS ==================== */
+@media (max-width: 1024px) {
+    #tableOfContents {
+        display: none;
+    }
+    
+    .theme-customizer {
+        left: -300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fab-container {
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    .fab-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #ttsBtn {
+        bottom: 80px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .quiz-container {
+        padding: 25px;
+    }
+    
+    .shortcuts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
