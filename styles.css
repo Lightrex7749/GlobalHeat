@@ -2631,68 +2631,8 @@ canvas {
 }/* Performance & Visibility Optimizations - Appended */
 
 /* Smooth scrolling fix */
-* {
+html {
     scroll-behavior: smooth;
-}
-
-/* Disable float animation for images to reduce lag */
-.animated-img {
-    animation: none !important;
-}
-
-/* Better text visibility - ENFORCED */
-.stat-card h3,
-.stat-card h2,
-.stat-card h4 {
-    color: #000000 !important;
-    font-weight: 700 !important;
-    text-shadow: none !important;
-}
-
-body.dark-mode .stat-card h3,
-body.dark-mode .stat-card h2,
-body.dark-mode .stat-card h4 {
-    color: #ffffff !important;
-}
-
-.stat-card p,
-.stat-card li,
-.stat-card span,
-.stat-card div {
-    color: #000000 !important;
-    font-weight: 500 !important;
-    text-shadow: none !important;
-}
-
-body.dark-mode .stat-card p,
-body.dark-mode .stat-card li,
-body.dark-mode .stat-card span,
-body.dark-mode .stat-card div {
-    color: #ffffff !important;
-}
-
-.stat-card ul li {
-    color: #000000 !important;
-    font-weight: 500 !important;
-}
-
-body.dark-mode .stat-card ul li {
-    color: #ffffff !important;
-}
-
-/* Ensure all text in sections is visible */
-.page-section h2,
-.page-section h3,
-.page-section p,
-.page-section li {
-    color: #000000 !important;
-}
-
-body.dark-mode .page-section h2,
-body.dark-mode .page-section h3,
-body.dark-mode .page-section p,
-body.dark-mode .page-section li {
-    color: #ffffff !important;
 }
 
 /* Improve navbar on all pages */
@@ -2744,34 +2684,91 @@ footer a:hover {
     }
 }
 
-/* DISABLE ALL ANIMATIONS FOR PERFORMANCE */
+/* DISABLE HEAVY ANIMATIONS FOR PERFORMANCE */
 .particle,
 .particles-container {
     display: none !important;
 }
 
 .reading-progress::after,
-header::before,
+header::before {
+    animation: none !important;
+}
+
 .page-loader {
-    animation: none !important;
     display: none !important;
-}
-
-* {
-    animation: none !important;
-}
-
-@keyframes float-particle,
-@keyframes progressShine,
-@keyframes headerShine,
-@keyframes slideInLeft,
-@keyframes slideInRight,
-@keyframes fadeIn {
-    0%, 100% { opacity: 1; transform: none; }
 }
 
 /* Keep only essential transitions */
 a, button, .theme-toggle {
     transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+/* STAT CARD TEXT VISIBILITY FIX */
+.stat-card {
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+body.dark-mode .stat-card {
+    background: #1e1e2f !important;
+    border: 1px solid #3a3a5a !important;
+}
+
+.stat-card h3,
+.stat-card h2,
+.stat-card h4,
+.stat-card .counter {
+    color: #1a2a6c !important;
+    font-weight: 700 !important;
+}
+
+body.dark-mode .stat-card h3,
+body.dark-mode .stat-card h2,
+body.dark-mode .stat-card h4,
+body.dark-mode .stat-card .counter {
+    color: #60a5fa !important;
+}
+
+.stat-card p,
+.stat-card li,
+.stat-card span {
+    color: #333333 !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+}
+
+body.dark-mode .stat-card p,
+body.dark-mode .stat-card li,
+body.dark-mode .stat-card span {
+    color: #e0e0e0 !important;
+}
+
+/* SECTION TEXT VISIBILITY */
+.page-section {
+    background: #f8f9fa;
+}
+
+body.dark-mode .page-section {
+    background: #121220;
+}
+
+.page-section h2 {
+    color: #1a2a6c !important;
+    font-weight: 700 !important;
+}
+
+body.dark-mode .page-section h2 {
+    color: #60a5fa !important;
+}
+
+.page-section p,
+.page-section li {
+    color: #333333 !important;
+}
+
+body.dark-mode .page-section p,
+body.dark-mode .page-section li {
+    color: #e0e0e0 !important;
 }
 
