@@ -3064,16 +3064,16 @@ body.dark-mode .page-section li {
 .theme-customizer {
     position: fixed;
     top: 50%;
-    left: -260px;
+    left: -280px;
     transform: translateY(-50%);
     width: 240px;
     background: var(--card-bg, #ffffff);
-    border-radius: 0 20px 20px 0;
-    padding: 25px;
-    box-shadow: 4px 0 30px rgba(0,0,0,0.15);
-    z-index: 1000;
+    border-radius: 0 16px 16px 0;
+    padding: 20px;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+    z-index: 99;
     transition: left 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.08);
 }
 
 body.dark-mode .theme-customizer {
@@ -3087,24 +3087,24 @@ body.dark-mode .theme-customizer {
 
 .theme-customizer h4 {
     color: var(--text-primary, #333);
-    margin: 0 0 15px 0;
-    font-size: 1rem;
+    margin: 0 0 12px 0;
+    font-size: 0.95rem;
 }
 
 .theme-customizer-toggle {
     position: absolute;
-    right: -50px;
+    right: -45px;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: none;
-    border-radius: 0 15px 15px 0;
+    border-radius: 0 12px 12px 0;
     color: white;
     cursor: pointer;
-    font-size: 1.2rem;
-    box-shadow: 4px 0 15px rgba(0,0,0,0.2);
+    font-size: 1.1rem;
+    box-shadow: 4px 0 12px rgba(0,0,0,0.15);
     transition: all 0.3s;
 }
 
@@ -3288,10 +3288,12 @@ body.dark-mode .theme-customizer {
 
 .quiz-container {
     background: white;
-    border-radius: 20px;
-    padding: 40px;
-    max-width: 600px;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 500px;
     width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
     text-align: center;
 }
 
@@ -3758,21 +3760,28 @@ body.dark-mode .shortcut-key {
     }
     
     .theme-customizer {
-        left: -280px;
+        left: -300px;
     }
     
     .theme-customizer-toggle {
-        right: -45px;
-        width: 45px;
-        height: 45px;
+        right: -40px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
-    /* Floating buttons - stack vertically on right side */
+    /* Hide theme customizer toggle on mobile to avoid overlap */
+    .theme-customizer,
+    .theme-customizer-toggle {
+        display: none;
+    }
+    
+    /* Floating buttons */
     .fab-container {
-        bottom: 20px;
-        left: 20px;
+        bottom: 15px;
+        left: 15px;
         gap: 8px;
     }
     
@@ -3834,33 +3843,6 @@ body.dark-mode .shortcut-key {
     
     .events-widget {
         padding: 15px;
-    }
-    
-    .theme-customizer {
-        top: auto;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        transform: translateY(100%);
-        border-radius: 20px 20px 0 0;
-        padding: 20px;
-    }
-    
-    .theme-customizer.visible {
-        transform: translateY(0);
-    }
-    
-    .theme-customizer-toggle {
-        top: -50px;
-        right: 20px;
-        left: auto;
-        border-radius: 15px 15px 0 0;
-        transform: none;
-    }
-    
-    .theme-colors {
-        grid-template-columns: repeat(6, 1fr);
     }
     
     /* Mobile typography */
